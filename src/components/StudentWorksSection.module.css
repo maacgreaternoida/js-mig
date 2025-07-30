@@ -1,0 +1,176 @@
+/* Student Works Section */
+.studentWorksSection {
+  width: 100%;
+  background: #0a0a0a;
+  padding: 6rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.studentWorksHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 0 1rem;
+}
+
+.studentWorksTitle {
+  font-family: var(--font-geist-mono), monospace;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.titleLine1, .titleLine2 {
+  display: block;
+  line-height: 1.1;
+  color: #fff;
+}
+.titleLine1 {
+  font-size: 2rem;
+  color: #a0dff4;
+}
+.titleLine2 {
+  font-size: 3rem;
+}
+
+.studentWorksSubtitle {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #b0b0b0;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: var(--font-geist-sans), sans-serif;
+}
+
+/* --- Container for both Marquee (Desktop) and Slider (Mobile) --- */
+.worksContainer {
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.marqueeWrapper {
+  width: fit-content;
+  display: flex;
+}
+
+.worksTrack {
+  display: flex;
+  flex-shrink: 0;
+  /* Animate each track from 0 to -100% of its own width */
+  animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+.workItem {
+  flex: 0 0 auto;
+  width: 400px;
+  padding: 0 1rem;
+  transition: transform 0.3s ease;
+}
+
+.workImage {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.worksContainer:hover .worksTrack {
+  animation-play-state: paused;
+}
+.workItem:hover {
+  transform: scale(1.05);
+}
+.workItem:hover .workImage {
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+}
+
+.mobileHint {
+  display: none;
+  color: #888;
+  margin-top: 2rem;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 0.9rem;
+  align-items: center;
+  gap: 0.5rem;
+}
+.hintIcon {
+  color: #00d4ff;
+  font-weight: bold;
+}
+
+
+/* --- MOBILE-FRIENDLY: Draggable Slider --- */
+@media (max-width: 768px) {
+  .worksContainer {
+    -webkit-mask-image: none;
+    mask-image: none;
+    overflow-x: scroll;
+    cursor: grab;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .worksContainer::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .worksContainer.isDragging {
+    cursor: grabbing;
+  }
+  
+  .marqueeWrapper {
+    width: auto;
+    display: block;
+  }
+
+  .worksTrack {
+    animation: none;
+    display: flex;
+    padding: 0 1rem;
+  }
+  
+  /* Hide the second track on mobile */
+  .worksTrack[aria-hidden="true"] {
+    display: none;
+  }
+
+  .workItem {
+    width: 70vw;
+    scroll-snap-align: center;
+  }
+  
+  .worksContainer:hover .worksTrack {
+    animation-play-state: running;
+  }
+  
+  .workItem:hover {
+    transform: none;
+  }
+  
+  .mobileHint {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .titleLine1 { font-size: 1.5rem; }
+  .titleLine2 { font-size: 2.2rem; }
+  .studentWorksSubtitle { font-size: 1rem; }
+  .workItem {
+    width: 80vw;
+  }
+}

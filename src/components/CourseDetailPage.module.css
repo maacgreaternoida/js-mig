@@ -1,0 +1,281 @@
+/* --- Base Styles --- */
+.courseDetailPage {
+  background: #0a0a0a;
+  color: #ffffff;
+  font-family: var(--font-geist-sans), sans-serif;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* --- Hero Section --- */
+.courseHero {
+  padding: 8rem 0 4rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: radial-gradient(ellipse at 50% 0%, rgba(0, 212, 255, 0.1), transparent 70%);
+}
+.breadcrumbLink {
+  color: #00d4ff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+.courseHeroTitle {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.courseHeroDescription {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #b0b0b0;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+}
+.courseMeta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.metaBadge {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+}
+
+/* --- Main Content Layout --- */
+.mainContentWrapper {
+  padding: 4rem 0;
+}
+.layoutGrid {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* --- Sticky Sidebar Navigation (Desktop) --- */
+.stickyNav {
+  position: sticky;
+  top: 120px; /* Adjust based on header height + some padding */
+}
+.stickyNav nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.navLink {
+  color: #b0b0b0;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+.navLink:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+.navLink.active {
+  color: #00d4ff;
+  background: rgba(0, 212, 255, 0.1);
+  border-left-color: #00d4ff;
+}
+
+/* --- Course Content Sections --- */
+.courseContent section {
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 4rem;
+}
+.courseContent section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+.contentSection h2 {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+.highlightsList {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.highlightsList li {
+  position: relative;
+  padding-left: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+.highlightsList li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #00d4ff;
+}
+.curriculumGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.curriculumCard {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+.curriculumCard h3 {
+  color: #ff006e;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.curriculumCard ul {
+  list-style: none;
+  padding: 0;
+  color: #b0b0b0;
+}
+.curriculumCard li {
+  padding: 0.25rem 0;
+}
+.softwareGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+.softwareCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+}
+.careerTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.careerTag {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+}
+.specializationsGrid {
+  display: grid;
+  gap: 2rem;
+}
+.specializationCard {
+  background: rgba(131, 56, 236, 0.05);
+  border: 1px solid rgba(131, 56, 236, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+}
+.specializationCard h3 {
+  color: #8338ec;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.specializationCard p {
+  color: #b0b0b0;
+  margin-bottom: 1.5rem;
+}
+.specializationCard h4 {
+  color: #00d4ff;
+  margin: 1.5rem 0 0.5rem 0;
+}
+.specializationCard ul {
+  list-style: none;
+  padding: 0;
+  color: #b0b0b0;
+}
+.specSoftwareTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.specSoftwareTags span {
+  background: rgba(0, 212, 255, 0.2);
+  color: #00d4ff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 900px) {
+  .layoutGrid {
+    grid-template-columns: 1fr;
+  }
+  .stickyNav {
+    position: relative;
+    top: 0;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+    width: 100%;
+  }
+  .stickyNav nav {
+    flex-direction: row;
+    /* FIX: Allow tabs to wrap and center them */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .navLink {
+    /* FIX: Make tabs more compact on mobile */
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+  }
+  .navLink.active {
+    border-left-color: transparent; /* Reset border for mobile */
+    border-bottom-color: #00d4ff;
+  }
+  .highlightsList {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .courseHero {
+    padding-top: 6rem;
+  }
+  .courseHeroTitle { font-size: 2.2rem; }
+  .courseHeroDescription { font-size: 1.1rem; }
+  .contentSection h2 { font-size: 1.8rem; }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+  .courseHero {
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+  }
+  .courseHeroTitle { font-size: 1.8rem; }
+  .courseHeroDescription { font-size: 1rem; }
+  .highlightsList li { font-size: 1rem; }
+  .mainContentWrapper {
+    padding: 3rem 0;
+  }
+  .courseContent section {
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
+  }
+}

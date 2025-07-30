@@ -1,0 +1,142 @@
+/* --- Base Styles --- */
+.contactPage {
+  background: #0a0a0a;
+  color: #ffffff;
+  font-family: var(--font-geist-sans), sans-serif;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* --- Hero Section --- */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 8rem 1.5rem 6rem;
+  overflow: hidden;
+}
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% -20%, rgba(131, 56, 236, 0.15), transparent 50%);
+}
+.heroTitle {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.heroSubtitle {
+  font-size: 1.2rem;
+  color: #b0b0b0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- Main Content Layout --- */
+.mainContent {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  padding: 4rem 1.5rem 6rem;
+}
+
+.infoSide h2 {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #00d4ff;
+}
+.infoSide > p { /* Target only the direct child p tag */
+  color: #b0b0b0;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+.detailItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  text-align: left;
+}
+.detailItem svg {
+  color: #00d4ff;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+.detailItem strong {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+.detailItem p, .detailItem a {
+  color: #b0b0b0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin: 0;
+}
+.detailItem a:hover {
+  color: #00d4ff;
+}
+
+.mapContainer {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 900px) {
+  .mainContent {
+    grid-template-columns: 1fr;
+    gap: 4rem; /* Increase gap for stacked layout */
+  }
+  .infoSide {
+    text-align: center;
+  }
+  .detailItem {
+    text-align: left; /* Keep detail items left-aligned */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 6rem 1.5rem 4rem;
+  }
+  .heroTitle {
+    font-size: 2.8rem;
+  }
+  .infoSide h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 5rem 1rem 3rem;
+  }
+  .heroTitle {
+    font-size: 2.2rem;
+  }
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+  .mainContent {
+    padding: 3rem 1rem;
+  }
+  .infoSide h2 {
+    font-size: 1.8rem;
+  }
+  .detailItem {
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,232 @@
+/* --- Main Header Styles --- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1rem 0;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+}
+.header.scrolled, .header.menuOpen {
+  background-color: rgba(10, 10, 20, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 0.75rem 0;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoLink img {
+  transition: transform 0.3s ease;
+}
+.logoLink:hover img {
+  transform: scale(1.05);
+}
+
+/* --- Desktop Navigation --- */
+.desktopNav {
+  display: none; /* Hidden by default, shown on larger screens */
+  align-items: center;
+  gap: 2rem;
+}
+.navLink {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #00d4ff, #8338ec);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+.navLink:hover, .navLink.active {
+  color: #fff;
+}
+.navLink:hover::after, .navLink.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* --- Desktop Dropdown --- */
+.navDropdown {
+  position: relative;
+}
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  /* FIX: Made the dropdown more compact */
+  width: 240px; 
+  background: rgba(20, 20, 30, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  /* FIX: Reduced padding */
+  padding: 0.5rem; 
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem; /* FIX: Reduced gap */
+}
+.dropdownMenu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.dropdownLink {
+  /* FIX: Removed icon-related styles (gap, align-items) */
+  padding: 0.6rem 1rem; /* FIX: Adjusted padding */
+  border-radius: 8px;
+  text-decoration: none;
+  color: #e0e0e0;
+  font-size: 0.95rem; /* AESTHETIC: Slightly smaller font for compact feel */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.dropdownLink:hover {
+  background-color: rgba(0, 212, 255, 0.1);
+  color: #fff;
+}
+
+/* --- Header Actions (Right Side) --- */
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.callButton {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, #00d4ff, #8338ec);
+  color: white;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.callButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3);
+}
+
+/* --- Hamburger Menu Icon --- */
+.hamburger {
+  display: flex; /* Changed to flex for mobile */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+.hamburger span {
+  width: 24px;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  transform-origin: 1px;
+}
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(20px);
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+/* --- Mobile Navigation Menu --- */
+.mobileNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(10, 10, 20, 0.95);
+  backdrop-filter: blur(15px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  transform: translateX(-100%);
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 999;
+}
+.mobileNav.open {
+  transform: translateX(0);
+}
+.mobileNavLink {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+.mobileNav.open .mobileNavLink {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: calc(0.1s * var(--i)); /* Staggered animation */
+}
+/* Assigning stagger index */
+.mobileNavLink:nth-child(1) { --i: 1; }
+.mobileNavLink:nth-child(2) { --i: 2; }
+.mobileNavLink:nth-child(3) { --i: 3; }
+.mobileNavLink:nth-child(4) { --i: 4; }
+.mobileNavLink:nth-child(5) { --i: 5; }
+.mobileNavLink:hover {
+  color: #00d4ff;
+}
+
+/* --- Responsive Breakpoints --- */
+@media (max-width: 900px) {
+  .desktopNav {
+    display: none;
+  }
+  .callButtonText {
+    display: none;
+  }
+  .callButton {
+    padding: 0.6rem;
+  }
+}
+
+@media (min-width: 901px) {
+  .desktopNav {
+    display: flex;
+  }
+  .hamburger {
+    display: none;
+  }
+}

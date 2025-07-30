@@ -1,0 +1,342 @@
+/* --- Base & Animation Styles --- */
+.modernCoursesPage {
+  background: #0a0a0a;
+  color: #ffffff;
+  font-family: var(--font-geist-sans), sans-serif;
+  overflow-x: hidden;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.animatable {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.animatable.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Hero Section --- */
+.coursesHero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 0 4rem 0;
+  text-align: center;
+}
+.coursesHeroBg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% -20%, rgba(0, 212, 255, 0.15), transparent 50%);
+  opacity: 0.7;
+}
+.coursesHeroContent {
+  position: relative;
+  z-index: 2;
+}
+.coursesHeroTitle {
+  font-family: var(--font-geist-mono), monospace;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+.titleLine1, .titleLine2 {
+  display: block;
+}
+.titleLine1 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #a0dff4;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.titleLine2 {
+  font-size: 4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff, #a0dff4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.coursesHeroDescription {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #b0b0b0;
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+}
+.heroStatsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.heroStatItem {
+  padding: 1rem;
+}
+.statNumber {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #00d4ff, #8338ec);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.statLabel {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+
+/* --- Course Categories Section --- */
+.coursesCategoriesSection {
+  padding: 6rem 0;
+  background: #101015;
+}
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.sectionTitle {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #fff, #a0dff4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.sectionSubtitle {
+  font-size: 1.2rem;
+  color: #b0b0b0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  align-items: start;
+}
+.categoryCard {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+.categoryCard:hover {
+  transform: translateY(-8px);
+  border-color: rgba(0, 212, 255, 0.4);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+.cardContent {
+  padding: 2rem;
+  flex-grow: 1;
+}
+.categoryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.categoryIcon {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  /* FIX: Added a neutral background color */
+  background: rgba(255, 255, 255, 0.05);
+}
+.categoryBadge {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.categoryTitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-family: var(--font-geist-mono), monospace;
+}
+.categoryDescription {
+  color: #b0b0b0;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+.courseList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+.categoryCard:hover .courseList {
+  max-height: 200px;
+  opacity: 1;
+}
+.courseQuickLink, .moreCoursesIndicator {
+  font-size: 0.9rem;
+  color: #d0d0d0;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.courseQuickLink:hover {
+  background: rgba(0, 212, 255, 0.1);
+  color: #00d4ff;
+}
+.moreCoursesIndicator {
+  text-align: center;
+  font-style: italic;
+  color: #8338ec;
+}
+.categoryFooter {
+  padding: 1rem 2rem 2rem;
+  margin-top: auto;
+  text-decoration: none;
+  color: white;
+  display: block;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.categoryCard:hover .categoryFooter {
+  background: rgba(0, 212, 255, 0.1);
+}
+.btnArrow {
+  transition: transform 0.3s ease;
+}
+.categoryCard:hover .btnArrow {
+  transform: translateX(5px);
+}
+
+
+/* --- Why Choose MAAC Section --- */
+.whyChooseMaacSection {
+  padding: 6rem 0;
+}
+.featuresShowcase {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.featureItem {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 2rem;
+  text-align: center;
+}
+.featureIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+.featureTitle {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.featureDesc {
+  color: #b0b0b0;
+  line-height: 1.6;
+}
+
+
+/* --- Final CTA Section --- */
+.coursesCtaSection {
+  padding: 6rem 0;
+  background: #101015;
+  text-align: center;
+}
+.ctaContent h2 {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.ctaContent p {
+  font-size: 1.2rem;
+  color: #b0b0b0;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ctaButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.ctaPrimary, .ctaSecondary, .ctaTertiary {
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: 2px solid transparent;
+}
+.ctaPrimary {
+  background: linear-gradient(135deg, #00d4ff, #ff006e);
+  color: white;
+}
+.ctaSecondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+.ctaTertiary {
+  background: transparent;
+  border-color: #00d4aa;
+  color: #00d4aa;
+}
+.ctaPrimary:hover { transform: scale(1.05); }
+.ctaSecondary:hover { background: rgba(255, 255, 255, 0.2); }
+.ctaTertiary:hover { background: #00d4aa; color: #0a0a0a; }
+
+/* --- Responsive Design --- */
+@media (max-width: 900px) {
+  .heroStatsGrid { grid-template-columns: repeat(2, 1fr); }
+  .featuresShowcase { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .titleLine1 { font-size: 1.5rem; }
+  .titleLine2 { font-size: 3rem; }
+  .coursesHeroDescription { font-size: 1.1rem; }
+  .sectionTitle { font-size: 2.2rem; }
+  .categoriesGrid { grid-template-columns: 1fr; }
+}

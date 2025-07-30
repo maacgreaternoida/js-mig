@@ -1,0 +1,290 @@
+/* --- Base & Animation Styles --- */
+.modernCategoryPage {
+  background: #0a0a0a;
+  color: #ffffff;
+  font-family: var(--font-geist-sans), sans-serif;
+  overflow-x: hidden;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.animatable {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.animatable.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Hero Section --- */
+.categoryHero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8rem 1.5rem 4rem;
+}
+.categoryHeroBg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 10%, rgba(0, 212, 255, 0.1), transparent 60%);
+}
+.categoryHeroContent {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+.breadcrumbLink {
+  color: #00d4ff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+.categoryHeroTitle {
+  font-family: var(--font-geist-mono), monospace;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+.titleMain {
+  display: block;
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff, #a0dff4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.titleSubtitle {
+  display: block;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #b0b0b0;
+}
+.categoryHeroDescription {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #b0b0b0;
+  max-width: 700px;
+  margin: 0 auto 2.5rem auto;
+}
+.heroStats {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.statItem {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+}
+.statNumber {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+.statLabel {
+  font-size: 0.8rem;
+  color: #b0b0b0;
+  text-transform: uppercase;
+}
+
+/* --- Filter Section --- */
+.courseFilters {
+  background: #101015;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 80px; /* Adjust based on your header's height */
+  z-index: 100;
+  padding: 0.5rem 0; /* Add some padding */
+}
+.filterTabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.filterTab {
+  background: none;
+  border: none;
+  color: #b0b0b0;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+  text-transform: capitalize;
+  white-space: nowrap; /* Prevent text from breaking */
+}
+.filterTab:hover {
+  color: #fff;
+}
+.filterTab.active {
+  color: #00d4ff;
+  border-bottom-color: #00d4ff;
+}
+
+/* --- Courses Showcase --- */
+.coursesShowcase {
+  padding: 4rem 0;
+}
+.coursesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+.modernCourseCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+.modernCourseCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 212, 255, 0.4);
+}
+.cardContent {
+  padding: 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.cardHeader {
+  margin-bottom: 1rem;
+}
+.courseTitle {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.courseMeta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #b0b0b0;
+}
+.courseMeta span {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+}
+.courseDescription {
+  color: #b0b0b0;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+.courseHighlights {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+.courseHighlights li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.courseHighlights li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #00d4ff;
+}
+.courseCtaBtn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 0.9rem 1.5rem;
+  background: rgba(0, 212, 255, 0.1);
+  color: #00d4ff;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: auto; /* Pushes the button to the bottom */
+}
+.modernCourseCard:hover .courseCtaBtn {
+  background: #00d4ff;
+  color: #0a0a0a;
+}
+
+/* --- Final CTA Section --- */
+.categoryCtaSection {
+  background: #101015;
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+.categoryCtaSection h2 {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.categoryCtaSection p {
+  font-size: 1.2rem;
+  color: #b0b0b0;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ctaButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.ctaPrimary, .ctaSecondary {
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: 2px solid transparent;
+}
+.ctaPrimary {
+  background: linear-gradient(135deg, #00d4ff, #ff006e);
+  color: white;
+}
+.ctaSecondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+.ctaPrimary:hover { transform: scale(1.05); }
+.ctaSecondary:hover { background: rgba(255, 255, 255, 0.2); }
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  .titleMain { font-size: 2.5rem; }
+  .titleSubtitle { font-size: 1.5rem; }
+  .coursesGrid { grid-template-columns: 1fr; }
+  
+  /* FIX: Allow filter tabs to wrap and adjust their styling */
+  .filterTabs {
+    flex-wrap: wrap;
+    gap: 0.25rem; /* Reduce gap on mobile */
+  }
+  .filterTab {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 20px; /* AESTHETIC: Use pill shape on mobile */
+  }
+  .filterTab.active {
+    background: rgba(0, 212, 255, 0.1);
+    border-bottom-color: transparent; /* Remove bottom border on mobile */
+  }
+}
