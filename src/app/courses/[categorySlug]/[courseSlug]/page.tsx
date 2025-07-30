@@ -5,17 +5,18 @@ import type { Metadata } from 'next';
 
 // This interface defines the shape of the params object from the URL
 interface PageProps {
-  params: {
+  params: Promise<{
     categorySlug: string;
     courseSlug: string;
-  };
+  }>;
 }
 
 // --- DYNAMIC SEO METADATA ---
 // This function generates unique SEO tags for each individual course page.
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const category = courseCategories.find(cat => cat.slug === params.categorySlug);
-  const course = category?.courses.find(c => c.slug === params.courseSlug);
+  const { categorySlug, courseSlug } = await params;
+  const category = courseCategories.find(cat => cat.slug === categorySlug);
+  const course = category?.courses.find(c => c.slug === courseSlug);
 
   if (!course) {
     return { title: 'Course Not Found' };
@@ -33,8 +34,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 // --- THE PAGE COMPONENT ---
 // This is a Server Component that fetches data and passes it to the client component.
-export default function CourseDetailPage({ params }: PageProps) {
-  const { categorySlug, courseSlug } = params;
+export default async function CourseDetailPage({ params }: PageProps) {
+  const { categorySlug, courseSlug } = await params;
   const category = courseCategories.find(cat => cat.slug === categorySlug);
   const course = category?.courses.find(c => c.slug === courseSlug);
 

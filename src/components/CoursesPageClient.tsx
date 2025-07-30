@@ -125,10 +125,10 @@ const CoursesPageClient: React.FC<CoursesPageClientProps> = ({ courseCategories,
         <div className={styles.container}>
           <div className={`${styles.sectionHeader} ${styles.animatable}`}>
             <h2 className={styles.sectionTitle}>Why Choose MAAC?</h2>
-            <p className={styles.sectionSubtitle}>India's leading animation and multimedia institute</p>
+            <p className={styles.sectionSubtitle}>India&apos;s leading animation and multimedia institute</p>
           </div>
           <div className={styles.featuresShowcase}>
-            <div className={`${styles.featureItem} ${styles.animatable}`} style={{animationDelay: '0s'}}><div className={styles.featureIcon}>🏆</div><h3 className={styles.featureTitle}>Award-Winning Institute</h3><p className={styles.featureDesc}>Recognized as India's premier animation and multimedia training institute.</p></div>
+            <div className={`${styles.featureItem} ${styles.animatable}`} style={{animationDelay: '0s'}}><div className={styles.featureIcon}>🏆</div><h3 className={styles.featureTitle}>Award-Winning Institute</h3><p className={styles.featureDesc}>Recognized as India&apos;s premier animation and multimedia training institute.</p></div>
             <div className={`${styles.featureItem} ${styles.animatable}`} style={{animationDelay: '0.1s'}}><div className={styles.featureIcon}>👨‍🏫</div><h3 className={styles.featureTitle}>Expert Faculty</h3><p className={styles.featureDesc}>Learn from industry professionals with years of experience in top studios.</p></div>
             <div className={`${styles.featureItem} ${styles.animatable}`} style={{animationDelay: '0.2s'}}><div className={styles.featureIcon}>💼</div><h3 className={styles.featureTitle}>100% Placement Support</h3><p className={styles.featureDesc}>Dedicated placement cell with strong industry connections for your career.</p></div>
           </div>

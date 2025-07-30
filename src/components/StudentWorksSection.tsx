@@ -65,7 +65,7 @@ const StudentWorksSection: React.FC = () => {
     <section className={styles.studentWorksSection}>
       <div className={styles.studentWorksHeader}>
         <h2 className={styles.studentWorksTitle}>
-          <span className={styles.titleLine1}>Our Students'</span>
+          <span className={styles.titleLine1}>Our Students&apos;</span>
           <span className={styles.titleLine2}>Creative Showcase</span>
         </h2>
         <p className={styles.studentWorksSubtitle}>

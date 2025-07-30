@@ -14,7 +14,7 @@ export default function ContactPage() {
         <div className={styles.heroBg}></div>
         <div className={styles.container}>
           <h1 className={styles.heroTitle}>Get In Touch</h1>
-          <p className={styles.heroSubtitle}>We're here to help you start your creative journey. Reach out to us with any questions.</p>
+          <p className={styles.heroSubtitle}>We&apos;re here to help you start your creative journey. Reach out to us with any questions.</p>
         </div>
       </div>
 

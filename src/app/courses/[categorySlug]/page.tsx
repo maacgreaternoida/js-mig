@@ -5,15 +5,16 @@ import type { Metadata } from 'next';
 
 // This interface defines the shape of the params object
 interface PageProps {
-  params: {
+  params: Promise<{
     categorySlug: string;
-  };
+  }>;
 }
 
 // --- DYNAMIC SEO METADATA ---
 // This function generates unique SEO tags for each category page.
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const category = courseCategories.find(cat => cat.slug === params.categorySlug);
+  const { categorySlug } = await params;
+  const category = courseCategories.find(cat => cat.slug === categorySlug);
 
   if (!category) {
     return {
@@ -34,8 +35,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 // --- THE PAGE COMPONENT ---
 // This is a Server Component that fetches data and passes it to the client component.
-export default function CourseCategoryPage({ params }: PageProps) { // FIX: Corrected the type name here
-  const { categorySlug } = params;
+export default async function CourseCategoryPage({ params }: PageProps) { // FIX: Corrected the type name here
+  const { categorySlug } = await params;
   const category = courseCategories.find(cat => cat.slug === categorySlug);
 
   // If no category matches the slug in the URL, show a 404 page.

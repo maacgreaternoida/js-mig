@@ -2,10 +2,9 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import styles from './CourseCategoryPage.module.css';
 // Import the types directly from the data file for consistency
-import type { Course, CourseCategory } from '@/data/course-data';
+import type { CourseCategory } from '@/data/course-data';
 
 // --- Main Client Component ---
 const CourseCategoryPageClient: React.FC<{ category: CourseCategory }> = ({ category }) => {

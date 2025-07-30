@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './DegreeBvocPage.module.css';
 
@@ -89,7 +89,7 @@ const UniversityTab = () => (
     <section className={`${styles.contentSection} ${styles.animatable}`}>
         <div className={styles.universityHeader}>
             <h2 className={styles.sectionTitle}>Global Skills University</h2>
-            <p className={styles.universitySubtitle}>Central India's 1st NEP & NSQF-aligned Skills University, Bhopal (Est. 2023)</p>
+            <p className={styles.universitySubtitle}>Central India&apos;s 1st NEP & NSQF-aligned Skills University, Bhopal (Est. 2023)</p>
         </div>
         <div className={styles.universityHighlights}>
             <div className={styles.highlightItem}><span>🏛️</span><div><h4>AISECT Group Legacy</h4><p>Part of the AISECT Group - 40 years of excellence in skill-based education.</p></div></div>
@@ -169,7 +169,7 @@ const DegreeBvocPageClient: React.FC = () => {
         <div className={`${styles.container} ${styles.animatable}`}>
           <div className={styles.ctaContent}>
             <h2>Ready to Transform Your Future?</h2>
-            <p>Join India's leading skills university and start your creative career today.</p>
+            <p>Join India&apos;s leading skills university and start your creative career today.</p>
             <div className={styles.ctaButtons}>
               <Link href="/contact" className={styles.ctaPrimary}>Apply Now</Link>
               <a href="/brochure.pdf" download className={styles.ctaSecondary}>Download Brochure</a>

@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
           <div className={styles.footerAbout}>
             <Image src="/maac-logo.png" alt="MAAC Greater Noida Logo" width={120} height={40} className={styles.footerLogo} />
             <p className={styles.footerDescription}>
-              India's leading institute for high-end training in animation, VFX, gaming, and multimedia.
+              India&apos;s leading institute for high-end training in animation, VFX, gaming, and multimedia.
             </p>
           </div>
           <div className={styles.footerLinksGroup}>
