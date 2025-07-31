@@ -28,8 +28,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Preload the hero poster image for faster initial load */}
+        <link
+          rel="preload"
+          href="https://maacgreaternoida.b-cdn.net/courses-img/hero-poster.webp"
+          as="image"
+          type="image/webp"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistSans.variable} antialiased`}
+        className={`${geistSans.variable} antialiased`}
       >
         <Header />
         <main>{children}</main>

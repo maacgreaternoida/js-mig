@@ -11,6 +11,24 @@ interface PageProps {
   }>;
 }
 
+// --- STATIC PARAMS GENERATION ---
+// This function generates all possible category and course slug combinations at build time.
+// This is required for static export (output: export) in Next.js.
+export async function generateStaticParams() {
+  const params: { categorySlug: string; courseSlug: string }[] = [];
+  
+  courseCategories.forEach(category => {
+    category.courses.forEach(course => {
+      params.push({
+        categorySlug: category.slug,
+        courseSlug: course.slug,
+      });
+    });
+  });
+  
+  return params;
+}
+
 // --- DYNAMIC SEO METADATA ---
 // This function generates unique SEO tags for each individual course page.
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
