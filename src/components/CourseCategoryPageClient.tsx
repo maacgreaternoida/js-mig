@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import styles from './CourseCategoryPage.module.css';
 import type { CourseCategory } from '@/data/course-data';
@@ -16,7 +16,7 @@ const CourseCategoryPageClient: React.FC<{ category: CourseCategory }> = ({ cate
     return category.courses.filter(course => course.level.toLowerCase() === activeFilter);
   }, [activeFilter, category.courses]);
 
-  // The JavaScript animation hook has been removed for SEO.
+  // All animation-related JavaScript and classes have been removed.
 
   return (
     <div className={styles.modernCategoryPage}>
