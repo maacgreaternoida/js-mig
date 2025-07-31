@@ -1,13 +1,12 @@
 /* --- Hero Section --- */
 .modernHero {
   position: relative;
-  /* FIX: Use min-height to cover the full screen */
-  min-height: 100vh;
+  min-height: 720px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 0 1.5rem; /* Adjusted padding for full height */
+  padding: 5rem 1.5rem;
 }
 
 .backgroundContainer {
@@ -37,8 +36,6 @@
   text-align: center;
   max-width: 900px;
 }
-
-/* --- Entrance Animations have been removed for SEO --- */
 
 /* --- Text Styling --- */
 .heroWelcome {
@@ -128,6 +125,10 @@
 
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
+  .modernHero {
+    /* FIX: Increased height for tablets */
+    min-height: 800px;
+  }
   .heroTitleContainer {
     flex-direction: column;
     gap: 1rem;
@@ -153,6 +154,10 @@
 }
 
 @media (max-width: 480px) {
+  .modernHero {
+    /* FIX: Increased height for phones */
+    min-height: 700px;
+  }
   .heroLogo {
     height: 50px;
   }
