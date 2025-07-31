@@ -23,17 +23,21 @@ const Hero: React.FC = () => {
         </div>
         
         <div className={styles.heroTitleContainer}>
-          <Image 
-            src="/maac-logo-hero.webp" 
-            alt="MAAC Logo" 
-            className={styles.heroLogo}
-            width={80}
-            height={80}
-            priority={true}
-            sizes="80px"
-            placeholder="blur"
-            blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
-          />
+          <div className={styles.heroLogoWrapper}>
+            <Image 
+              src="/maac-logo-hero.webp" 
+              alt="MAAC Logo" 
+              className={styles.heroLogo}
+              width={0}
+              height={80}
+              priority
+              sizes="80px"
+              quality={90}
+              loading="eager"
+              fetchPriority="high"
+              style={{ width: 'auto', height: '80px' }}
+            />
+          </div>
           <h1 className={styles.heroGreaterNoida}>
             <span className={styles.greaterNoidaText}>{GREATER_NOIDA}</span>
           </h1>

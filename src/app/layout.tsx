@@ -9,6 +9,7 @@ const geistSans = Geist({
   subsets: ["latin"],
   display: 'swap',
   preload: true,
+  fallback: ['system-ui', 'arial'],
 });
 
 // --- SEO METADATA ---
