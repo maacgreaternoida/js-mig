@@ -42,7 +42,7 @@
   margin-bottom: 1rem;
 }
 .welcomeText {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 500;
   color: #ffffff;
   letter-spacing: 0.1em;
@@ -75,9 +75,9 @@
   line-height: 1.1;
 }
 .heroSubtitle {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 400;
-  color: #c0c0c0;
+  color: #ffffff;
   line-height: 1.7;
   max-width: 600px;
   margin: 0 auto;

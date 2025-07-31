@@ -23,30 +23,21 @@ const Hero: React.FC = () => {
   };
 
   const videoSrc = "https://maacgreaternoida.b-cdn.net/hero-video.webm";
-  const posterSrc = "https://maacgreaternoida.b-cdn.net/courses-img/hero-poster.webp";
 
   return (
     <section className={styles.modernHero}>
       <div className={styles.backgroundContainer}>
-        {!videoHasError ? (
+        {/* FIX: Replaced the incorrect ternary operator with a logical AND (&&) for cleaner conditional rendering */}
+        {!videoHasError && (
           <video
             className={styles.heroBgVideo}
             src={videoSrc}
-            poster={posterSrc}
             autoPlay
             loop
             muted
             playsInline
             preload="metadata"
             onError={() => setVideoHasError(true)}
-          />
-        ) : (
-          <Image
-            src={posterSrc}
-            alt="Creative arts students working on computers"
-            fill
-            priority
-            className={styles.heroBgPoster}
           />
         )}
         <div className={styles.heroOverlay}></div>
