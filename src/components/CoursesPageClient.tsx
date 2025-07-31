@@ -29,7 +29,7 @@ interface CoursesPageClientProps {
 
 // --- Main Component ---
 const CoursesPageClient: React.FC<CoursesPageClientProps> = ({ courseCategories, totalCourses }) => {
-  // The animation hook has been removed.
+  // All animation-related JavaScript has been removed.
 
   return (
     <div className={styles.modernCoursesPage}>
