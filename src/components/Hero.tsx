@@ -1,4 +1,4 @@
-"use client"; // This is a client component because it uses browser-only features (onClick, useState)
+"use client";
 
 import React, { useState } from 'react';
 import Link from 'next/link';
@@ -9,17 +9,17 @@ const WELCOME = 'Welcome to';
 const GREATER_NOIDA = 'Greater Noida';
 const SUBTITLE = 'Top Institutes for Animation, VFX, Gaming and Graphic Design';
 
+const ArrowIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" fill="currentColor"/>
+  </svg>
+);
+
 const Hero: React.FC = () => {
-  // State to handle video loading errors, a cleaner approach than DOM manipulation
   const [videoHasError, setVideoHasError] = useState(false);
 
   const handleScrollToContact = () => {
-    // This function assumes an element with id="contact-form" exists on the page.
-    // We will create that section later in the migration.
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-      contactForm.scrollIntoView({ behavior: 'smooth' });
-    }
+    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const videoSrc = "https://maacgreaternoida.b-cdn.net/hero-video.webm";
@@ -27,72 +27,60 @@ const Hero: React.FC = () => {
 
   return (
     <section className={styles.modernHero}>
-      {/* Background: Conditionally render video or fallback image */}
-      {!videoHasError ? (
-        <video
-          className={styles.heroBgVideo}
-          src={videoSrc}
-          poster={posterSrc}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          onError={() => setVideoHasError(true)} // Set state on error
-        />
-      ) : (
-        <Image
-          src={posterSrc}
-          alt="Creative arts students working on computers"
-          layout="fill"
-          objectFit="cover"
-          priority
-          className={styles.heroBgPoster}
-        />
-      )}
-      
-      <div className={styles.heroOverlay}></div>
+      <div className={styles.backgroundContainer}>
+        {!videoHasError ? (
+          <video
+            className={styles.heroBgVideo}
+            src={videoSrc}
+            poster={posterSrc}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            onError={() => setVideoHasError(true)}
+          />
+        ) : (
+          <Image
+            src={posterSrc}
+            alt="Creative arts students working on computers"
+            fill
+            priority
+            className={styles.heroBgPoster}
+          />
+        )}
+        <div className={styles.heroOverlay}></div>
+      </div>
       
       <div className={styles.heroContent}>
-        <div className={styles.heroTextContainer}>
-          <div className={styles.heroAnimatedText}>
-            <div className={styles.textRevealContainer}>
-              <h1 className={styles.heroWelcome}>
-                <span className={styles.welcomeText}>{WELCOME}</span>
-                <div className={styles.welcomeUnderline}></div>
-              </h1>
-              
-              <div className={styles.heroTitleContainer}>
-                {/* Use Next.js Image component for optimization and mark as priority */}
-                <Image 
-                  src="/maac-logo-hero.webp" 
-                  alt="MAAC - Leading Animation & VFX Institute" 
-                  className={styles.heroLogo}
-                  width={80}
-                  height={80}
-                  priority={true} // Tells Next.js to load this image first
-                />
-                <h1 className={styles.heroGreaterNoida}>
-                  <span className={styles.greaterNoidaText}>{GREATER_NOIDA}</span>
-                </h1>
-              </div>
-              
-              <p className={styles.heroSubtitle}>
-                {SUBTITLE}
-              </p>
-            </div>
-          </div>
-          
-          <div className={styles.heroCtaButtons}>
-            <button className={styles.ctaPrimary} onClick={handleScrollToContact}>
-              <span>START YOUR JOURNEY</span>
-              <div className={styles.ctaArrow}>→</div>
-            </button>
-            {/* Use Next.js Link component for faster, client-side navigation */}
-            <Link href="/courses" className={styles.ctaSecondary}>
-              <span>EXPLORE COURSES</span>
-            </Link>
-          </div>
+        <div className={styles.heroWelcome}>
+          <span className={styles.welcomeText}>{WELCOME}</span>
+        </div>
+        
+        <div className={styles.heroTitleContainer}>
+          <Image 
+            src="/maac-logo-hero.webp" 
+            alt="MAAC Logo" 
+            className={styles.heroLogo}
+            width={80}
+            height={80}
+            priority={true}
+          />
+          <h1 className={styles.heroGreaterNoida}>
+            <span className={styles.greaterNoidaText}>{GREATER_NOIDA}</span>
+          </h1>
+        </div>
+        
+        <p className={styles.heroSubtitle}>{SUBTITLE}</p>
+        
+        <div className={styles.heroCtaButtons}>
+          <button className={styles.ctaPrimary} onClick={handleScrollToContact}>
+            <span>Start Your Journey</span>
+            <ArrowIcon />
+          </button>
+          <Link href="/courses" className={styles.ctaSecondary}>
+            <span>Explore Courses</span>
+          </Link>
         </div>
       </div>
     </section>

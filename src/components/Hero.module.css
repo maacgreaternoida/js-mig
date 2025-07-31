@@ -1,4 +1,4 @@
-/* Hero Section */
+/* --- Hero Section --- */
 .modernHero {
   position: relative;
   height: 100vh;
@@ -6,241 +6,184 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding-top: 80px; /* Space for header */
-  width: 100%;
+  padding: 0 1.5rem;
 }
 
-/* Background Video & Poster Image */
-.heroBgVideo, .heroBgPoster {
+.backgroundContainer {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   z-index: 1;
 }
 
-/* Dark Overlay - Simplified gradient */
-.heroOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
+.heroBgVideo, .heroBgPoster {
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.6) 0%,
-    rgba(0, 0, 0, 0.4) 100%
-  );
-  z-index: 2;
+  object-fit: cover;
 }
 
-/* Hero Content */
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 30%, rgba(0, 0, 0, 0.7));
+}
+
 .heroContent {
   position: relative;
   z-index: 3;
   text-align: center;
   max-width: 900px;
-  padding: 0 2rem;
 }
 
-/* Welcome Text */
+/* --- Entrance Animations (Pure CSS for SEO) --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.heroWelcome, .heroTitleContainer, .heroSubtitle, .heroCtaButtons {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0; 
+  animation-fill-mode: forwards;
+}
+
+/* Stagger the animations with delays */
+.heroWelcome { animation-delay: 0.1s; }
+.heroTitleContainer { animation-delay: 0.2s; }
+.heroSubtitle { animation-delay: 0.3s; }
+.heroCtaButtons { animation-delay: 0.4s; }
+
+
+/* --- Text Styling --- */
 .heroWelcome {
-  position: relative;
-  margin: 0;
   margin-bottom: 1rem;
 }
-
 .welcomeText {
-  font-family: var(--font-geist-sans), sans-serif;
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: #e0e0e0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #ffffff;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
-
-.welcomeUnderline {
-  width: 100px;
-  height: 2px;
-  background: linear-gradient(90deg, #00d4ff, #8338ec);
-  margin: 0.5rem auto 0;
-  border-radius: 1px;
-}
-
-/* Hero Title Container */
 .heroTitleContainer {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
 }
-
-/* MAAC Logo - Simplified shadow */
 .heroLogo {
   height: 80px;
   width: auto;
-  filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.3));
-  will-change: filter;
+  filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.3));
 }
-
-/* Greater Noida Title - Optimized gradient */
 .heroGreaterNoida {
   margin: 0;
 }
-
 .greaterNoidaText {
-  font-family: var(--font-geist-mono), monospace; /* Using font from layout */
+  font-family: var(--font-geist-mono), monospace;
   font-size: 4.5rem;
-  font-weight: 900;
-  background: linear-gradient(135deg, #00d4ff 0%, #8338ec 100%);
-  background-size: 100% 100%; /* Reduced from 200% */
+  font-weight: 800;
+  background: #F3AE0B;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  letter-spacing: 0.05em;
-  text-shadow: 0 0 15px rgba(0, 212, 255, 0.2); /* Reduced shadow */
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
   line-height: 1.1;
-  will-change: background-position;
 }
-
-/* Subtitle */
 .heroSubtitle {
-  font-family: var(--font-geist-sans), sans-serif;
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 1.2rem;
+  font-weight: 400;
   color: #c0c0c0;
   line-height: 1.7;
+  max-width: 600px;
   margin: 0 auto;
-  max-width: 700px;
 }
 
-/* CTA Buttons */
+/* --- CTA Buttons --- */
 .heroCtaButtons {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
-
-.ctaPrimary,
-.ctaSecondary {
-  padding: 1rem 2rem;
+.ctaPrimary, .ctaSecondary {
+  padding: 0.9rem 1.8rem;
   border-radius: 50px;
-  border: none;
-  font-family: var(--font-geist-sans), sans-serif;
+  border: 2px solid transparent;
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.75rem;
   text-decoration: none;
-  letter-spacing: 0.05em;
-  will-change: transform, background-color;
 }
-
 .ctaPrimary {
-  background: linear-gradient(135deg, #00d4ff, #0099cc);
-  color: white;
-  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2); /* Simplified shadow */
+  background: #00d4ff;
+  color: #0a0a0a;
+  box-shadow: 0 5px 20px rgba(0, 212, 255, 0.2);
 }
-
 .ctaPrimary:hover {
-  background: linear-gradient(135deg, #00d4ff, #00b8e6);
-  transform: translate3d(0, -2px, 0); /* GPU accelerated */
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
 }
-
 .ctaSecondary {
   background: rgba(255, 255, 255, 0.1);
   color: white;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
 }
-
 .ctaSecondary:hover {
   background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: translate3d(0, -2px, 0); /* GPU accelerated */
+  border-color: #fff;
 }
 
-.ctaArrow {
-  transition: transform 0.3s ease;
-  font-size: 1.1rem;
-  will-change: transform;
-}
-
-.ctaPrimary:hover .ctaArrow {
-  transform: translate3d(5px, 0, 0); /* GPU accelerated */
-}
-
-/* Responsive Design */
+/* --- Responsive Design --- */
 @media (max-width: 768px) {
-  .modernHero {
-    height: 100vh;
-    padding-top: 70px;
-  }
-
-  .heroContent {
-    padding: 0 1.5rem;
-  }
-
-  .welcomeText {
-    font-size: 1.2rem;
-  }
-
   .heroTitleContainer {
     flex-direction: column;
     gap: 1rem;
   }
-
   .heroLogo {
     height: 60px;
   }
-
   .greaterNoidaText {
     font-size: 3rem;
   }
-
   .heroSubtitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
-
   .heroCtaButtons {
     flex-direction: column;
-    gap: 1rem;
-    width: 100%;
     align-items: center;
   }
-
-  .ctaPrimary,
-  .ctaSecondary {
+  .ctaPrimary, .ctaSecondary {
     width: 100%;
+    max-width: 300px;
     justify-content: center;
-    padding: 1rem 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
-  .modernHero {
-    padding-top: 60px;
-  }
-
   .heroLogo {
     height: 50px;
   }
-
   .greaterNoidaText {
     font-size: 2.5rem;
   }
-
   .heroSubtitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
-
   .welcomeText {
     font-size: 1rem;
   }
