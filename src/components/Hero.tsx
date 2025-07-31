@@ -1,45 +1,19 @@
-"use client";
-
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Hero.module.css';
+import ClientVideoPlayer from './ClientVideoPlayer';
+import ClientScrollButton from './ClientScrollButton';
 
 const WELCOME = 'Welcome to';
 const GREATER_NOIDA = 'Greater Noida';
 const SUBTITLE = 'Top Institutes for Animation, VFX, Gaming and Graphic Design';
 
-const ArrowIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" fill="currentColor"/>
-  </svg>
-);
-
 const Hero: React.FC = () => {
-  const [videoHasError, setVideoHasError] = useState(false);
-
-  const handleScrollToContact = () => {
-    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const videoSrc = "/hero-video.webm";
-
   return (
     <section className={styles.modernHero}>
       <div className={styles.backgroundContainer}>
-        {/* FIX: Replaced the incorrect ternary operator with a logical AND (&&) for cleaner conditional rendering */}
-        {!videoHasError && (
-          <video
-            className={styles.heroBgVideo}
-            src={videoSrc}
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="metadata"
-            onError={() => setVideoHasError(true)}
-          />
-        )}
+        <ClientVideoPlayer />
         <div className={styles.heroOverlay}></div>
       </div>
       
@@ -56,6 +30,9 @@ const Hero: React.FC = () => {
             width={80}
             height={80}
             priority={true}
+            sizes="80px"
+            placeholder="blur"
+            blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
           />
           <h1 className={styles.heroGreaterNoida}>
             <span className={styles.greaterNoidaText}>{GREATER_NOIDA}</span>
@@ -65,10 +42,7 @@ const Hero: React.FC = () => {
         <p className={styles.heroSubtitle}>{SUBTITLE}</p>
         
         <div className={styles.heroCtaButtons}>
-          <button className={styles.ctaPrimary} onClick={handleScrollToContact}>
-            <span>Start Your Journey</span>
-            <ArrowIcon />
-          </button>
+          <ClientScrollButton />
           <Link href="/courses" className={styles.ctaSecondary}>
             <span>Explore Courses</span>
           </Link>

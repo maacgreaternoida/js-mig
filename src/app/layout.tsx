@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: 'swap',
+  preload: true,
 });
 
 // --- SEO METADATA ---
@@ -28,16 +30,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        {/* Preload the hero video to improve loading performance */}
-        <link
-          rel="preload"
-          href="/hero-video.webm"
-          as="video"
-          type="video/webm"
-          crossOrigin="anonymous"
-        />
-      </head>
       <body
         className={`${geistSans.variable} antialiased`}
       >
