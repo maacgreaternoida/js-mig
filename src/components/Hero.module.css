@@ -1,12 +1,13 @@
 /* --- Hero Section --- */
 .modernHero {
   position: relative;
-  height: 100vh;
+  /* FIX: Use min-height to cover the full screen */
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 0 1.5rem;
+  padding: 0 1.5rem; /* Adjusted padding for full height */
 }
 
 .backgroundContainer {
@@ -37,30 +38,7 @@
   max-width: 900px;
 }
 
-/* --- Entrance Animations (Pure CSS for SEO) --- */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.heroWelcome, .heroTitleContainer, .heroSubtitle, .heroCtaButtons {
-  animation: fadeInUp 0.6s ease-out forwards;
-  opacity: 0; 
-  animation-fill-mode: forwards;
-}
-
-/* Stagger the animations with delays */
-.heroWelcome { animation-delay: 0.1s; }
-.heroTitleContainer { animation-delay: 0.2s; }
-.heroSubtitle { animation-delay: 0.3s; }
-.heroCtaButtons { animation-delay: 0.4s; }
-
+/* --- Entrance Animations have been removed for SEO --- */
 
 /* --- Text Styling --- */
 .heroWelcome {
