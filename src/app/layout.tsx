@@ -31,6 +31,48 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preload" href="/maac-logo-hero.webp" as="image" type="image/webp" />
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            .heroLogo {
+              width: auto !important;
+              height: 80px !important;
+              display: block !important;
+              filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.3)) !important;
+              flex-shrink: 0 !important;
+              will-change: transform !important;
+              transform: translateZ(0) !important;
+              max-width: 100% !important;
+            }
+            .heroLogoWrapper {
+              min-width: 0 !important;
+            }
+            @media (max-width: 768px) {
+              .heroLogo {
+                height: 60px !important;
+                width: auto !important;
+                max-width: 100% !important;
+              }
+              .heroLogoWrapper {
+                width: 100% !important;
+                max-width: 300px !important;
+              }
+            }
+            @media (max-width: 480px) {
+              .heroLogo {
+                height: 50px !important;
+                width: auto !important;
+                max-width: 100% !important;
+              }
+              .heroLogoWrapper {
+                width: 100% !important;
+                max-width: 280px !important;
+              }
+            }
+          `
+        }} />
+      </head>
       <body
         className={`${geistSans.variable} antialiased`}
       >
