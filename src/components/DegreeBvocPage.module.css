@@ -30,7 +30,6 @@
 .bvocHeroContent {
   position: relative;
   z-index: 2;
-  animation: fadeIn 0.6s ease-out forwards;
 }
 .bvocHeroTitle {
   font-family: var(--font-geist-mono), monospace;
@@ -88,54 +87,49 @@
   box-shadow: 0 12px 35px rgba(0, 212, 255, 0.3);
 }
 
-/* --- Sticky Navigation --- */
-.bvocNav {
-  background: rgba(16, 16, 21, 0.8);
-  backdrop-filter: blur(10px);
+/* --- Navigation Tabs --- */
+.bvocNavTabs {
+  background: #101015;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: sticky;
   top: 80px; /* Adjust based on your header's height */
   z-index: 100;
 }
-.navContainer {
+.navTabsContainer {
   display: flex;
   justify-content: center;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-.navLink {
+.navTabsContainer::-webkit-scrollbar { display: none; }
+.navTab {
   background: none;
   border: none;
-  cursor: pointer;
-  text-align: left;
-  font-family: inherit;
-  width: auto;
   color: #b0b0b0;
-  text-decoration: none;
-  font-weight: 600;
   padding: 1.2rem 1.5rem;
   font-size: 1rem;
-  transition: all 0.2s ease;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
   border-bottom: 3px solid transparent;
   text-transform: capitalize;
   white-space: nowrap;
 }
-.navLink:hover {
+.navTab:hover {
   color: #fff;
 }
-.navLink.active {
+.navTab.active {
   color: #00d4ff;
   border-bottom-color: #00d4ff;
 }
 
-/* --- Main Content --- */
-.mainContent {
+/* --- Content Sections --- */
+.bvocContent {
   background: #0a0a0a;
 }
 .contentSection {
   padding: 5rem 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-.contentSection:last-of-type {
-  border-bottom: none;
 }
 .sectionTitle {
   font-family: var(--font-geist-mono), monospace;
@@ -150,7 +144,7 @@
 }
 .sectionGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 3rem;
   align-items: start;
   max-width: 1100px;
@@ -280,9 +274,50 @@
 }
 .step h4 { margin: 0 0 0.25rem 0; }
 .step p { color: #b0b0b0; margin: 0; }
-@keyframes fadeIn {
-  from { opacity: 0; } to { opacity: 1; }
+
+/* --- Final CTA Section --- */
+.bvocCtaSection {
+  background: #101015;
+  padding: 5rem 0;
+  text-align: center;
 }
+.ctaContent h2 {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+.ctaContent p {
+  color: #b0b0b0;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.ctaButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.ctaPrimary, .ctaSecondary {
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: 2px solid transparent;
+}
+.ctaPrimary {
+  background: linear-gradient(135deg, #ff006e, #8338ec);
+  color: white;
+}
+.ctaSecondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+.ctaPrimary:hover { transform: scale(1.05); }
+.ctaSecondary:hover { background: rgba(255, 255, 255, 0.2); }
 
 /* --- Responsive Design --- */
 @media (max-width: 900px) {
