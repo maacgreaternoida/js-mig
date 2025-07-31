@@ -32,7 +32,7 @@ export default function RootLayout({
         {/* Preload the hero video to improve loading performance */}
         <link
           rel="preload"
-          href="https://maacgreaternoida.b-cdn.net/hero-video.webm"
+          href="/hero-video.webm"
           as="video"
           type="video/webm"
           crossOrigin="anonymous"

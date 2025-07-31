@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
     document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const videoSrc = "https://maacgreaternoida.b-cdn.net/hero-video.webm";
+  const videoSrc = "/hero-video.webm";
 
   return (
     <section className={styles.modernHero}>
