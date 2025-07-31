@@ -54,7 +54,12 @@ const Header: React.FC = () => {
             <div className={`${styles.dropdownMenu} ${dropdownOpen ? styles.open : ''}`}>
               {courseCategories.map((category) => (
                 // FIX: Removed the icon section for a cleaner look
-                <Link key={category.slug} href={`/courses/${category.slug}`} className={styles.dropdownLink}>
+                <Link 
+                  key={category.slug} 
+                  href={`/courses/${category.slug}`} 
+                  className={styles.dropdownLink}
+                  onClick={() => setDropdownOpen(false)}
+                >
                   <span>{category.name}</span>
                 </Link>
               ))}
