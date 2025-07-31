@@ -4,132 +4,55 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './DegreeBvocPage.module.css';
 
-// A simple hook for fade-in animations on scroll
-const useAnimateOnScroll = (activeTab: string) => {
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add(styles.visible);
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
-  
-      const elements = document.querySelectorAll(`.${styles.animatable}`);
-      elements.forEach(el => observer.observe(el));
-  
-      return () => observer.disconnect();
-    }, [activeTab]); // Re-run the effect when the active tab changes to find new elements
-};
-
-// --- Content Components for Each Tab ---
-// By breaking content into smaller components, React can render them more efficiently.
-
-const OverviewTab = () => (
-    <section className={`${styles.contentSection} ${styles.animatable}`}>
-        <div className={styles.sectionGrid}>
-            <div className={styles.contentText}>
-                <h2>About B.Voc Program</h2>
-                <p>The Bachelor of Vocation (B.Voc.) program has been launched by UGC to integrate industry-relevant skills into higher education, creating a perfect bridge between academic learning and professional requirements.</p>
-                <div className={styles.programStructure}>
-                    <h3>Program Structure</h3>
-                    <div className={styles.structureItems}>
-                        <div className={styles.structureItem}><span>📋</span><div><h4>UG Certificate</h4><p>1 Year Program</p></div></div>
-                        <div className={styles.structureItem}><span>🎓</span><div><h4>UG Diploma</h4><p>2 Years Program</p></div></div>
-                        <div className={styles.structureItem}><span>🏆</span><div><h4>B.Voc Degree</h4><p>3 Years Program</p></div></div>
-                    </div>
-                </div>
-                <div className={styles.keyFeatures}>
-                    <h3>Key Features</h3>
-                    <ul>
-                        <li>Based on NSQF, CBCS and industry needs for flexible, modular structure</li>
-                        <li>Focuses on human-centric learning and entrepreneurship</li>
-                        <li>Multiple entry and exit points for maximum flexibility</li>
-                        <li>Holistic development approach</li>
-                        <li>Job-ready, skilled graduates aligned with national employment goals</li>
-                    </ul>
-                </div>
-            </div>
-            <div className={styles.contentVisual}>
-                <div className={styles.visualCard}>
-                    <h3>Why B.Voc?</h3>
-                    <div className={styles.needList}>
-                        <div className={styles.needItem}><span className={styles.needNumber}>1</span><p>Bridge the gap between academic education and industry requirements</p></div>
-                        <div className={styles.needItem}><span className={styles.needNumber}>2</span><p>Equip students with employable skills alongside theoretical knowledge</p></div>
-                        <div className={styles.needItem}><span className={styles.needNumber}>3</span><p>Address rising demand for skilled professionals in various sectors</p></div>
-                        <div className={styles.needItem}><span className={styles.needNumber}>4</span><p>Promote entrepreneurship and self-employment among youth</p></div>
-                        <div className={styles.needItem}><span className={styles.needNumber}>5</span><p>Offer flexible learning paths with multiple entry/exit options</p></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-);
-
-const BenefitsTab = () => (
-    <section className={`${styles.contentSection} ${styles.animatable}`}>
-        <h2 className={styles.sectionTitle}>Benefits of B.Voc Program</h2>
-        <div className={styles.benefitsGrid}>
-            <div className={styles.benefitCard}><span>💼</span><h3>Job-Ready Skills</h3><p>Combines job-related skills with general education for complete professional development.</p></div>
-            <div className={styles.benefitCard}><span>🏭</span><h3>Industry Alignment</h3><p>Follows the NSQF system to match industry skill needs and requirements.</p></div>
-            <div className={styles.benefitCard}><span>🛠️</span><h3>Practical Training</h3><p>Focuses on practical training and real job knowledge for immediate application.</p></div>
-            <div className={styles.benefitCard}><span>📈</span><h3>Enhanced Employability</h3><p>Helps improve employability and job opportunities in competitive markets.</p></div>
-            <div className={styles.benefitCard}><span>🔄</span><h3>Flexible Learning</h3><p>Offers flexibility with multiple entry and exit points for diverse career paths.</p></div>
-            <div className={styles.benefitCard}><span>🌍</span><h3>Global Opportunities</h3><p>Prepares students for local, national & international job markets.</p></div>
-        </div>
-    </section>
-);
-
-
-const UniversityTab = () => (
-    <section className={`${styles.contentSection} ${styles.animatable}`}>
-        <div className={styles.universityHeader}>
-            <h2 className={styles.sectionTitle}>Global Skills University</h2>
-            <p className={styles.universitySubtitle}>Central India&apos;s 1st NEP & NSQF-aligned Skills University, Bhopal (Est. 2023)</p>
-        </div>
-        <div className={styles.universityHighlights}>
-            <div className={styles.highlightItem}><span>🏛️</span><div><h4>AISECT Group Legacy</h4><p>Part of the AISECT Group - 40 years of excellence in skill-based education.</p></div></div>
-            <div className={styles.highlightItem}><span>📚</span><div><h4>Comprehensive Programs</h4><p>Offers UG, PG & Ph.D. programs across 15+ future-focused faculties.</p></div></div>
-            <div className={styles.highlightItem}><span>🏭</span><div><h4>Industry Training</h4><p>Industry-ready training via expert-led teaching, labs, & internships.</p></div></div>
-            <div className={styles.highlightItem}><span>✅</span><div><h4>UGC Accredited</h4><p>UGC-accredited with apprenticeship-embedded degree programs.</p></div></div>
-        </div>
-    </section>
-);
-
-const AdmissionTab = () => (
-    <section className={`${styles.contentSection} ${styles.animatable}`}>
-        <h2 className={styles.sectionTitle}>Ready to Start Your Journey?</h2>
-        <div className={styles.admissionCard}>
-            <h3>Admission Process</h3>
-            <div className={styles.processSteps}>
-                <div className={styles.step}><div className={styles.stepNumber}>1</div><div><h4>Application</h4><p>Submit your application with required documents.</p></div></div>
-                <div className={styles.step}><div className={styles.stepNumber}>2</div><div><h4>Assessment</h4><p>Portfolio review and aptitude assessment.</p></div></div>
-                <div className={styles.step}><div className={styles.stepNumber}>3</div><div><h4>Interview</h4><p>Personal interview with faculty members.</p></div></div>
-                <div className={styles.step}><div className={styles.stepNumber}>4</div><div><h4>Enrollment</h4><p>Complete enrollment and begin your journey.</p></div></div>
-            </div>
-        </div>
-    </section>
-);
-
-// --- Main Page Component ---
-
 const DegreeBvocPageClient: React.FC = () => {
-  const [activeTab, setActiveTab] = useState('overview');
-  useAnimateOnScroll(activeTab); // Pass activeTab to the hook
+  const [activeSection, setActiveSection] = useState('overview');
+  
+  // This hook tracks which section is currently visible in the viewport
+  useEffect(() => {
+    const sections = document.querySelectorAll('section[data-section]');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      // This configuration triggers the change when a section is in the middle of the screen
+      { rootMargin: '-40% 0px -60% 0px', threshold: 0 }
+    );
 
-  const tabContent: { [key: string]: React.ReactNode } = {
-    overview: <OverviewTab />,
-    benefits: <BenefitsTab />,
-    university: <UniversityTab />,
-    admission: <AdmissionTab />,
+    sections.forEach(section => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
+  // NEW: Smooth scroll handler
+  const handleNavClick = (e: React.MouseEvent<HTMLButtonElement>, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      const headerOffset = 150; // Height of header + nav bar + some buffer
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
+
+  const navLinks = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'benefits', label: 'Benefits' },
+    { id: 'audience', label: 'Who Can Apply' },
+    { id: 'university', label: 'University' },
+    { id: 'admission', label: 'Admission' },
+  ];
 
   return (
     <div className={styles.bvocDegreePage}>
+      {/* Hero Section */}
       <section className={styles.bvocHero}>
         <div className={styles.bvocHeroBg}></div>
         <div className={styles.bvocHeroContent}>
@@ -147,36 +70,103 @@ const DegreeBvocPageClient: React.FC = () => {
         </div>
       </section>
 
-      <nav className={styles.bvocNavTabs}>
-        <div className={styles.navTabsContainer}>
-          {Object.keys(tabContent).map(tab => (
-            <button
-              key={tab}
-              className={`${styles.navTab} ${activeTab === tab ? styles.active : ''}`}
-              onClick={() => setActiveTab(tab)}
+      {/* Sticky Navigation */}
+      <nav className={styles.bvocNav}>
+        <div className={styles.navContainer}>
+          {navLinks.map(link => (
+            <button 
+              key={link.id} 
+              onClick={(e) => handleNavClick(e, link.id)} 
+              className={`${styles.navLink} ${activeSection === link.id ? styles.active : ''}`}
             >
-              {tab}
+              {link.label}
             </button>
           ))}
         </div>
       </nav>
 
-      <main className={styles.bvocContent}>
-        {tabContent[activeTab]}
-      </main>
-
-      <section className={styles.bvocCtaSection}>
-        <div className={`${styles.container} ${styles.animatable}`}>
-          <div className={styles.ctaContent}>
-            <h2>Ready to Transform Your Future?</h2>
-            <p>Join India&apos;s leading skills university and start your creative career today.</p>
-            <div className={styles.ctaButtons}>
-              <Link href="/contact" className={styles.ctaPrimary}>Apply Now</Link>
-              <a href="/brochure.pdf" download className={styles.ctaSecondary}>Download Brochure</a>
+      {/* Main Content Area */}
+      <main className={styles.mainContent}>
+        <div className={styles.container}>
+          {/* Overview Section */}
+          <section id="overview" data-section className={styles.contentSection}>
+            <div className={styles.sectionGrid}>
+              <div className={styles.contentText}>
+                <h2>About B.Voc Program</h2>
+                <p>The Bachelor of Vocation (B.Voc.) program has been launched by UGC to integrate industry-relevant skills into higher education, creating a perfect bridge between academic learning and professional requirements.</p>
+                <h3>Program Structure</h3>
+                <div className={styles.structureItems}>
+                    <div className={styles.structureItem}><span>📋</span><div><h4>UG Certificate</h4><p>1 Year Program</p></div></div>
+                    <div className={styles.structureItem}><span>🎓</span><div><h4>UG Diploma</h4><p>2 Years Program</p></div></div>
+                    <div className={styles.structureItem}><span>🏆</span><div><h4>B.Voc Degree</h4><p>3 Years Program</p></div></div>
+                </div>
+              </div>
+              <div className={styles.contentVisual}>
+                  <h3>Key Features</h3>
+                  <ul>
+                    <li>Based on NSQF, CBCS and industry needs for flexible, modular structure</li>
+                    <li>Focuses on human-centric learning and entrepreneurship</li>
+                    <li>Multiple entry and exit points for maximum flexibility</li>
+                    <li>Holistic development approach</li>
+                    <li>Job-ready, skilled graduates aligned with national employment goals</li>
+                  </ul>
+              </div>
             </div>
-          </div>
+          </section>
+
+          {/* Benefits Section */}
+          <section id="benefits" data-section className={styles.contentSection}>
+            <h2 className={styles.sectionTitle}>Benefits of B.Voc Program</h2>
+            <div className={styles.benefitsGrid}>
+                <div className={styles.benefitCard}><span>💼</span><h3>Job-Ready Skills</h3><p>Combines job-related skills with general education for complete professional development.</p></div>
+                <div className={styles.benefitCard}><span>🏭</span><h3>Industry Alignment</h3><p>Follows the NSQF system to match industry skill needs and requirements.</p></div>
+                <div className={styles.benefitCard}><span>🛠️</span><h3>Practical Training</h3><p>Focuses on practical training and real job knowledge for immediate application.</p></div>
+                <div className={styles.benefitCard}><span>📈</span><h3>Enhanced Employability</h3><p>Helps improve employability and job opportunities in competitive markets.</p></div>
+                <div className={styles.benefitCard}><span>🔄</span><h3>Flexible Learning</h3><p>Offers flexibility with multiple entry and exit points for diverse career paths.</p></div>
+                <div className={styles.benefitCard}><span>🌍</span><h3>Global Opportunities</h3><p>Prepares students for local, national & international job markets.</p></div>
+            </div>
+          </section>
+
+          {/* Audience Section */}
+          <section id="audience" data-section className={styles.contentSection}>
+            <h2 className={styles.sectionTitle}>Who Can Apply?</h2>
+            <div className={styles.audienceGrid}>
+                <div className={styles.audienceCard}><span>🎓</span><h3>Class 12th Graduates</h3><p>Students who have completed Class 12th and are creatively inclined.</p></div>
+                <div className={styles.audienceCard}><span>🎨</span><h3>Arts & Design Graduates</h3><p>Graduates from arts, design, IT, and media-related streams.</p></div>
+                <div className={styles.audienceCard}><span>💡</span><h3>Creative Aspirants</h3><p>Passionate aspirants looking for careers in animation, VFX, and gaming.</p></div>
+            </div>
+          </section>
+
+          {/* University Section */}
+          <section id="university" data-section className={styles.contentSection}>
+              <div className={styles.universityHeader}>
+                <h2 className={styles.sectionTitle}>Global Skills University</h2>
+                <p className={styles.universitySubtitle}>Central India&apos;s 1st NEP & NSQF-aligned Skills University, Bhopal (Est. 2023)</p>
+              </div>
+              <div className={styles.universityHighlights}>
+                <div className={styles.highlightItem}><span>🏛️</span><div><h4>AISECT Group Legacy</h4><p>Part of the AISECT Group - 40 years of excellence in skill-based education.</p></div></div>
+                <div className={styles.highlightItem}><span>📚</span><div><h4>Comprehensive Programs</h4><p>Offers UG, PG & Ph.D. programs across 15+ future-focused faculties.</p></div></div>
+                <div className={styles.highlightItem}><span>🏭</span><div><h4>Industry Training</h4><p>Industry-ready training via expert-led teaching, labs, & internships.</p></div></div>
+                <div className={styles.highlightItem}><span>✅</span><div><h4>UGC Accredited</h4><p>UGC-accredited with apprenticeship-embedded degree programs.</p></div></div>
+              </div>
+          </section>
+          
+          {/* Admission Section */}
+          <section id="admission" data-section className={styles.contentSection}>
+              <h2 className={styles.sectionTitle}>Ready to Start Your Journey?</h2>
+              <div className={styles.admissionCard}>
+                  <h3>Admission Process</h3>
+                  <div className={styles.processSteps}>
+                      <div className={styles.step}><div className={styles.stepNumber}>1</div><div><h4>Application</h4><p>Submit your application with required documents.</p></div></div>
+                      <div className={styles.step}><div className={styles.stepNumber}>2</div><div><h4>Assessment</h4><p>Portfolio review and aptitude assessment.</p></div></div>
+                      <div className={styles.step}><div className={styles.stepNumber}>3</div><div><h4>Interview</h4><p>Personal interview with faculty members.</p></div></div>
+                      <div className={styles.step}><div className={styles.stepNumber}>4</div><div><h4>Enrollment</h4><p>Complete enrollment and begin your journey.</p></div></div>
+                  </div>
+              </div>
+          </section>
+
         </div>
-      </section>
+      </main>
     </div>
   );
 };

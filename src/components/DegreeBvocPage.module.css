@@ -30,7 +30,6 @@
 .bvocHeroContent {
   position: relative;
   z-index: 2;
-  /* SEO FIX: Add animation directly */
   animation: fadeIn 0.6s ease-out forwards;
 }
 .bvocHeroTitle {
@@ -89,55 +88,54 @@
   box-shadow: 0 12px 35px rgba(0, 212, 255, 0.3);
 }
 
-/* --- Navigation Tabs --- */
-.bvocNavTabs {
-  background: #101015;
+/* --- Sticky Navigation --- */
+.bvocNav {
+  background: rgba(16, 16, 21, 0.8);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: sticky;
   top: 80px; /* Adjust based on your header's height */
   z-index: 100;
 }
-.navTabsContainer {
+.navContainer {
   display: flex;
   justify-content: center;
-  overflow-x: auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
-.navTabsContainer::-webkit-scrollbar { display: none; }
-.navTab {
+.navLink {
   background: none;
   border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  width: auto;
   color: #b0b0b0;
+  text-decoration: none;
+  font-weight: 600;
   padding: 1.2rem 1.5rem;
   font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   border-bottom: 3px solid transparent;
   text-transform: capitalize;
   white-space: nowrap;
 }
-.navTab:hover {
+.navLink:hover {
   color: #fff;
 }
-.navTab.active {
+.navLink.active {
   color: #00d4ff;
   border-bottom-color: #00d4ff;
 }
 
-/* --- Content Sections --- */
-.bvocContent {
+/* --- Main Content --- */
+.mainContent {
   background: #0a0a0a;
 }
 .contentSection {
   padding: 5rem 1.5rem;
-  /* SEO FIX: Add a simple fade-in animation directly */
-  animation: fadeIn 0.4s ease-out forwards;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+.contentSection:last-of-type {
+  border-bottom: none;
 }
 .sectionTitle {
   font-family: var(--font-geist-mono), monospace;
@@ -152,7 +150,7 @@
 }
 .sectionGrid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr)); /* Robust equal columns */
+  grid-template-columns: 1fr 1fr;
   gap: 3rem;
   align-items: start;
   max-width: 1100px;
@@ -170,7 +168,7 @@
   margin-bottom: 2rem;
   font-size: 1.1rem;
 }
-.programStructure h3, .keyFeatures h3 {
+.contentText h3 {
   color: #ff006e;
   font-size: 1.3rem;
   margin: 2rem 0 1rem 0;
@@ -199,63 +197,28 @@
 }
 .structureItem h4 { margin: 0 0 0.25rem 0; font-weight: 600; }
 .structureItem p { margin: 0; font-size: 0.9rem; }
-.keyFeatures ul {
+.contentVisual h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ff006e;
+}
+.contentVisual ul {
   list-style: none;
   padding: 0;
 }
-.keyFeatures li {
+.contentVisual li {
   color: #b0b0b0;
   padding: 0.8rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
   padding-left: 2rem;
 }
-.keyFeatures li::before {
+.contentVisual li::before {
   content: '✓';
   position: absolute;
   left: 0;
   color: #00d4ff;
 }
-.visualCard {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 2rem;
-  position: sticky;
-  top: 150px;
-}
-.visualCard h3 {
-  color: #00d4ff;
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-.needItem {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-.needNumber {
-  background: linear-gradient(135deg, #00d4ff, #8338ec);
-  color: white;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 0.9rem;
-  flex-shrink: 0;
-}
-.needItem p {
-  color: #b0b0b0;
-  margin: 0;
-  line-height: 1.6;
-}
-
-/* --- Benefits & Audience Grids --- */
 .benefitsGrid, .audienceGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -274,16 +237,12 @@
 .benefitCard h3 { color: #00d4ff; margin-bottom: 0.5rem; font-size: 1.3rem; }
 .audienceCard h3 { color: #ff006e; margin-bottom: 0.5rem; font-size: 1.3rem; }
 .benefitCard p, .audienceCard p { color: #b0b0b0; line-height: 1.6; margin: 0; }
-
-/* --- University & Admission --- */
 .universityHeader { text-align: center; margin-bottom: 3rem; }
 .universitySubtitle { color: #b0b0b0; font-size: 1.2rem; margin-top: -2.5rem; }
 .universityHighlights {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 1.5rem;
-  max-width: 1100px;
-  margin: 0 auto;
 }
 .highlightItem {
   display: flex;
@@ -321,57 +280,32 @@
 }
 .step h4 { margin: 0 0 0.25rem 0; }
 .step p { color: #b0b0b0; margin: 0; }
-
-/* --- Final CTA Section --- */
-.bvocCtaSection {
-  background: #101015;
-  padding: 5rem 0;
-  text-align: center;
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
 }
-.ctaContent h2 {
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 2.5rem;
-  color: #fff;
-  margin-bottom: 1rem;
-}
-.ctaContent p {
-  color: #b0b0b0;
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-.ctaButtons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-.ctaPrimary, .ctaSecondary {
-  padding: 0.9rem 2rem;
-  border-radius: 50px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  border: 2px solid transparent;
-}
-.ctaPrimary {
-  background: linear-gradient(135deg, #ff006e, #8338ec);
-  color: white;
-}
-.ctaSecondary {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-}
-.ctaPrimary:hover { transform: scale(1.05); }
-.ctaSecondary:hover { background: rgba(255, 255, 255, 0.2); }
 
 /* --- Responsive Design --- */
+@media (max-width: 900px) {
+  .sectionGrid { grid-template-columns: 1fr; }
+  .navContainer {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+  }
+  .navLink {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    border-bottom: none;
+  }
+  .navLink.active {
+    background: rgba(0, 212, 255, 0.1);
+    border-bottom-color: transparent;
+  }
+}
 @media (max-width: 768px) {
   .titleLine1 { font-size: 2.5rem; }
   .titleLine2 { font-size: 3.5rem; }
-  .sectionGrid { grid-template-columns: 1fr; }
-  .visualCard { position: static; }
-  .navTabsContainer { justify-content: flex-start; }
   .sectionTitle { font-size: 2.2rem; }
 }
