@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './CoursesPage.module.css';
@@ -27,41 +27,16 @@ interface CoursesPageClientProps {
   totalCourses: number;
 }
 
-// --- Animation Hook ---
-// A simple hook for fade-in animations on scroll
-const useAnimateOnScroll = () => {
-    const observer = useRef<IntersectionObserver | null>(null);
-  
-    useEffect(() => {
-      observer.current = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add(styles.visible);
-              observer.current?.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
-  
-      const elements = document.querySelectorAll(`.${styles.animatable}`);
-      elements.forEach(el => observer.current?.observe(el));
-  
-      return () => observer.current?.disconnect();
-    }, []);
-};
-
 // --- Main Component ---
 const CoursesPageClient: React.FC<CoursesPageClientProps> = ({ courseCategories, totalCourses }) => {
-    useAnimateOnScroll(); // Activate the animation hook
+  // The animation hook has been removed.
 
   return (
     <div className={styles.modernCoursesPage}>
       {/* Hero Section */}
       <section className={styles.coursesHero}>
         <div className={styles.coursesHeroBg}></div>
-        <div className={`${styles.coursesHeroContent} ${styles.animatable}`}>
+        <div className={styles.coursesHeroContent}>
           <h1 className={styles.coursesHeroTitle}>
             <span className={styles.titleLine1}>COURSES AT</span>
             <span className={styles.titleLine2}>MAAC</span>
@@ -81,13 +56,13 @@ const CoursesPageClient: React.FC<CoursesPageClientProps> = ({ courseCategories,
       {/* Course Categories Grid */}
       <section className={styles.coursesCategoriesSection}>
         <div className={styles.container}>
-          <div className={`${styles.sectionHeader} ${styles.animatable}`}>
+          <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Choose Your Path</h2>
             <p className={styles.sectionSubtitle}>Select from our comprehensive range of industry-focused programs</p>
           </div>
           <div className={styles.categoriesGrid}>
-            {courseCategories.map((category, index) => (
-              <div key={category.slug} className={`${styles.categoryCard} ${styles.animatable}`} style={{ animationDelay: `${index * 0.1}s` }}>
+            {courseCategories.map((category) => (
+              <div key={category.slug} className={styles.categoryCard}>
                 <div className={styles.cardContent}>
                   <div className={styles.categoryHeader}>
                     <div className={styles.categoryIcon}>
@@ -123,21 +98,21 @@ const CoursesPageClient: React.FC<CoursesPageClientProps> = ({ courseCategories,
       {/* Why Choose MAAC Section */}
       <section className={styles.whyChooseMaacSection}>
         <div className={styles.container}>
-          <div className={`${styles.sectionHeader} ${styles.animatable}`}>
+          <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Why Choose MAAC?</h2>
             <p className={styles.sectionSubtitle}>India&apos;s leading animation and multimedia institute</p>
           </div>
           <div className={styles.featuresShowcase}>
-            <div className={`${styles.featureItem} ${styles.animatable}`} style={{animationDelay: '0s'}}><div className={styles.featureIcon}>🏆</div><h3 className={styles.featureTitle}>Award-Winning Institute</h3><p className={styles.featureDesc}>Recognized as India&apos;s premier animation and multimedia training institute.</p></div>
-            <div className={`${styles.featureItem} ${styles.animatable}`} style={{animationDelay: '0.1s'}}><div className={styles.featureIcon}>👨‍🏫</div><h3 className={styles.featureTitle}>Expert Faculty</h3><p className={styles.featureDesc}>Learn from industry professionals with years of experience in top studios.</p></div>
-            <div className={`${styles.featureItem} ${styles.animatable}`} style={{animationDelay: '0.2s'}}><div className={styles.featureIcon}>💼</div><h3 className={styles.featureTitle}>100% Placement Support</h3><p className={styles.featureDesc}>Dedicated placement cell with strong industry connections for your career.</p></div>
+            <div className={styles.featureItem}><div className={styles.featureIcon}>🏆</div><h3 className={styles.featureTitle}>Award-Winning Institute</h3><p className={styles.featureDesc}>Recognized as India&apos;s premier animation and multimedia training institute.</p></div>
+            <div className={styles.featureItem}><div className={styles.featureIcon}>👨‍🏫</div><h3 className={styles.featureTitle}>Expert Faculty</h3><p className={styles.featureDesc}>Learn from industry professionals with years of experience in top studios.</p></div>
+            <div className={styles.featureItem}><div className={styles.featureIcon}>💼</div><h3 className={styles.featureTitle}>100% Placement Support</h3><p className={styles.featureDesc}>Dedicated placement cell with strong industry connections for your career.</p></div>
           </div>
         </div>
       </section>
 
       {/* Final CTA Section */}
       <section className={styles.coursesCtaSection}>
-        <div className={`${styles.container} ${styles.animatable}`}>
+        <div className={styles.container}>
           <div className={styles.ctaContent}>
             <h2>Ready to Start Your Creative Journey?</h2>
             <p>Join thousands of successful students and transform your passion into a thriving career.</p>

@@ -1,4 +1,4 @@
-/* --- Base & Animation Styles --- */
+/* --- Base Styles --- */
 .modernCategoryPage {
   background: #0a0a0a;
   color: #ffffff;
@@ -9,15 +9,6 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
-}
-.animatable {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-.animatable.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* --- Hero Section --- */
@@ -106,7 +97,7 @@
   position: sticky;
   top: 80px; /* Adjust based on your header's height */
   z-index: 100;
-  padding: 0.5rem 0; /* Add some padding */
+  padding: 0.5rem 0;
 }
 .filterTabs {
   display: flex;
@@ -124,7 +115,7 @@
   transition: all 0.3s ease;
   border-bottom: 3px solid transparent;
   text-transform: capitalize;
-  white-space: nowrap; /* Prevent text from breaking */
+  white-space: nowrap;
 }
 .filterTab:hover {
   color: #fff;
@@ -214,7 +205,7 @@
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
-  margin-top: auto; /* Pushes the button to the bottom */
+  margin-top: auto;
 }
 .modernCourseCard:hover .courseCtaBtn {
   background: #00d4ff;
@@ -272,19 +263,17 @@
   .titleMain { font-size: 2.5rem; }
   .titleSubtitle { font-size: 1.5rem; }
   .coursesGrid { grid-template-columns: 1fr; }
-  
-  /* FIX: Allow filter tabs to wrap and adjust their styling */
   .filterTabs {
     flex-wrap: wrap;
-    gap: 0.25rem; /* Reduce gap on mobile */
+    gap: 0.25rem;
   }
   .filterTab {
     padding: 0.75rem 1rem;
     font-size: 0.9rem;
-    border-radius: 20px; /* AESTHETIC: Use pill shape on mobile */
+    border-radius: 20px;
   }
   .filterTab.active {
     background: rgba(0, 212, 255, 0.1);
-    border-bottom-color: transparent; /* Remove bottom border on mobile */
+    border-bottom-color: transparent;
   }
 }

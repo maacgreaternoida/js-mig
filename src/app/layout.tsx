@@ -29,12 +29,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Preload the hero poster image for faster initial load */}
+        {/* Preload the hero video to improve loading performance */}
         <link
           rel="preload"
-          href="https://maacgreaternoida.b-cdn.net/courses-img/hero-poster.webp"
-          as="image"
-          type="image/webp"
+          href="https://maacgreaternoida.b-cdn.net/hero-video.webm"
+          as="video"
+          type="video/webm"
           crossOrigin="anonymous"
         />
       </head>

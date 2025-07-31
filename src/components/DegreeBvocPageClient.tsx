@@ -136,6 +136,21 @@ const DegreeBvocPageClient: React.FC = () => {
             </section>
         </div>
       </main>
+
+      {/* Final CTA Section */}
+      <section className={styles.finalCtaSection}>
+        <div className={styles.container}>
+          <div className={styles.ctaContent}>
+            <h2>Ready to Start Your Creative Journey?</h2>
+            <p>Join thousands of successful students and transform your passion into a thriving career.</p>
+            <div className={styles.ctaButtons}>
+              <Link href="/contact" className={styles.ctaPrimary}>Apply Now</Link>
+              <a href="/brochure.pdf" download className={styles.ctaSecondary}>Download Brochure</a>
+              <Link href="/contact#contact-form" className={styles.ctaTertiary}>Book a Demo</Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

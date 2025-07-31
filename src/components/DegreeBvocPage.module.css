@@ -42,7 +42,7 @@
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: sticky;
-  top: 80px; /* Adjust based on your header's height */
+  top: 80px;
   z-index: 100;
 }
 .navContainer {
@@ -104,6 +104,58 @@
 .step h4 { margin: 0 0 0.25rem 0; }
 .step p { color: #b0b0b0; margin: 0; }
 
+/* --- Final CTA Section --- */
+.finalCtaSection {
+  padding: 6rem 0;
+  background: #101015;
+  text-align: center;
+}
+.ctaContent h2 {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.ctaContent p {
+  font-size: 1.2rem;
+  color: #b0b0b0;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ctaButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.ctaPrimary, .ctaSecondary, .ctaTertiary {
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: 2px solid transparent;
+}
+.ctaPrimary {
+  background: linear-gradient(135deg, #00d4ff, #ff006e);
+  color: white;
+}
+.ctaSecondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+.ctaTertiary {
+  background: transparent;
+  border-color: #00d4aa;
+  color: #00d4aa;
+}
+.ctaPrimary:hover { transform: scale(1.05); }
+.ctaSecondary:hover { background: rgba(255, 255, 255, 0.2); }
+.ctaTertiary:hover { background: #00d4aa; color: #0a0a0a; }
+
 /* --- Responsive Design --- */
 @media (max-width: 900px) {
   .navContainer {
@@ -116,7 +168,7 @@
     padding: 0.6rem 1rem;
     font-size: 0.9rem;
     border-radius: 20px;
-    border-bottom: none; /* Remove bottom border for mobile */
+    border-bottom: none;
   }
   .navLink.active {
     background: rgba(0, 212, 255, 0.1);

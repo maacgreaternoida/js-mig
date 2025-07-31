@@ -1,4 +1,4 @@
-/* --- Base & Animation Styles --- */
+/* --- Base Styles --- */
 .modernCoursesPage {
   background: #0a0a0a;
   color: #ffffff;
@@ -9,15 +9,6 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
-}
-.animatable {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-.animatable.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* --- Hero Section --- */
@@ -163,7 +154,6 @@
   align-items: center;
   justify-content: center;
   padding: 10px;
-  /* FIX: Added a neutral background color */
   background: rgba(255, 255, 255, 0.05);
 }
 .categoryBadge {
