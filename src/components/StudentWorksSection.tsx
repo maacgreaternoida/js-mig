@@ -5,14 +5,14 @@ import Image from 'next/image';
 import styles from './StudentWorksSection.module.css';
 
 const works = [
-  'https://maacgreaternoida.b-cdn.net/student-works/sw-1.jpg',
-  'https://maacgreaternoida.b-cdn.net/student-works/sw-2.jpg',
-  'https://maacgreaternoida.b-cdn.net/student-works/sw-3.jpg',
-  'https://maacgreaternoida.b-cdn.net/student-works/sw-4.jpg',
-  'https://maacgreaternoida.b-cdn.net/student-works/sw-5.jpeg',
-  'https://maacgreaternoida.b-cdn.net/student-works/sw-6.jpeg',
-  'https://maacgreaternoida.b-cdn.net/student-works/sw-7.jpeg',
-  'https://maacgreaternoida.b-cdn.net/student-works/sw-8.jpeg',
+  '/sw-1.jpg',
+  '/sw-2.jpg',
+  '/sw-3.jpg',
+  '/sw-4.jpg',
+  '/sw-5.jpeg',
+  '/sw-6.jpeg',
+  '/sw-7.jpeg',
+  '/sw-8.jpeg',
 ];
 
 const StudentWorksSection: React.FC = () => {
