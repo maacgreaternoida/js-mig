@@ -14,14 +14,10 @@ const ClientVideoPlayer: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (!shouldLoadVideo || videoHasError) {
-    return null;
-  }
-
   return (
     <>
-      {/* Poster image that shows while video loads */}
-      {!videoLoaded && (
+      {/* Poster image that shows while video loads or if video has error */}
+      {(!shouldLoadVideo || !videoLoaded || videoHasError) && (
         <img
           src="/hero-poster.webp"
           alt="Hero Poster"
@@ -30,18 +26,20 @@ const ClientVideoPlayer: React.FC = () => {
         />
       )}
       
-      {/* Video element */}
-      <video
-        className={styles.heroBgVideo}
-        src="/hero-video.webm"
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="none"
-        onLoadedData={() => setVideoLoaded(true)}
-        onError={() => setVideoHasError(true)}
-      />
+      {/* Video element - only render if shouldLoadVideo is true and no error */}
+      {shouldLoadVideo && !videoHasError && (
+        <video
+          className={styles.heroBgVideo}
+          src="/hero-video.webm"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="none"
+          onLoadedData={() => setVideoLoaded(true)}
+          onError={() => setVideoHasError(true)}
+        />
+      )}
     </>
   );
 };
