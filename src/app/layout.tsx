@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -10,6 +10,14 @@ const geistSans = Geist({
   display: 'swap',
   preload: true,
   fallback: ['system-ui', 'arial'],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+  display: 'swap',
+  preload: true,
+  fallback: ['monospace'],
 });
 
 // --- SEO METADATA ---
@@ -74,7 +82,7 @@ export default function RootLayout({
         }} />
       </head>
       <body
-        className={`${geistSans.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
         <main>{children}</main>
