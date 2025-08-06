@@ -9,6 +9,33 @@ interface CourseStructuredDataProps {
 }
 
 export default function CourseStructuredData({ course, category, faqs }: CourseStructuredDataProps) {
+  // Helper function to convert duration to workload format
+  const getCourseWorkload = (duration: string) => {
+    // Extract number from duration (e.g., "24 Months", "18 Months", "12 Months")
+    const match = duration.match(/(\d+)/);
+    if (match) {
+      const months = parseInt(match[1]);
+      // Calculate hours based on typical course workload:
+      // - 20 hours per week (4 hours per day, 5 days per week)
+      // - 4 weeks per month
+      const hoursPerMonth = 80; // 20 hours/week * 4 weeks/month
+      const totalHours = months * hoursPerMonth;
+      return `PT${totalHours}H`; // ISO 8601 duration format for hours
+    }
+    
+    // Fallback values based on course level
+    switch (course.level) {
+      case 'Advanced':
+        return "PT1920H"; // 24 months * 80 hours = 1920 hours
+      case 'Intermediate':
+        return "PT1440H"; // 18 months * 80 hours = 1440 hours
+      case 'Foundation':
+        return "PT960H";  // 12 months * 80 hours = 960 hours
+      default:
+        return "PT1440H"; // Default to intermediate level
+    }
+  };
+
   // Course structured data
   const courseData = {
     "@context": "https://schema.org",
@@ -44,6 +71,7 @@ export default function CourseStructuredData({ course, category, faqs }: CourseS
     "hasCourseInstance": {
       "@type": "CourseInstance",
       "courseMode": "OnSite",
+      "courseWorkload": getCourseWorkload(course.duration),
       "location": {
         "@type": "Place",
         "name": "MAAC Greater Noida",
