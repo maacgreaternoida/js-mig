@@ -1,6 +1,8 @@
 import { notFound } from 'next/navigation';
 import { courseCategories } from '@/data/course-data';
 import CourseDetailPageClient from '@/components/CourseDetailPageClient';
+import CourseStructuredData from '@/components/CourseStructuredData';
+import { getFAQsByCategory } from '@/data/faq-data';
 import type { Metadata } from 'next';
 
 // This interface defines the shape of the params object from the URL
@@ -40,12 +42,30 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: 'Course Not Found' };
   }
 
+  // Generate location-specific keywords
+  const locationKeywords = [
+    `${course.name.toLowerCase()} course in Greater Noida`,
+    `${course.name.toLowerCase()} training Noida`,
+    `${course.name.toLowerCase()} institute Delhi NCR`
+  ];
+
+  // Generate course-specific description
+  const courseDescription = `Learn ${course.name.toLowerCase()} in Greater Noida with MAAC. ${course.description} Get placement assistance and start your career in ${category?.name.toLowerCase()}.`;
+
   return {
-    title: `${course.fullName || course.name} | MAAC Greater Noida`,
-    description: course.description,
+    title: `${course.fullName || course.name} Course in Greater Noida | MAAC Institute`,
+    description: courseDescription,
+    keywords: [
+      `${course.name.toLowerCase()} course Greater Noida`,
+      `${course.name.toLowerCase()} training Noida`,
+      `${course.name.toLowerCase()} institute Delhi NCR`,
+      `MAAC ${course.name.toLowerCase()} course`,
+      `${category?.name.toLowerCase()} course Greater Noida`,
+      ...locationKeywords
+    ].join(', '),
     openGraph: {
-      title: `${course.fullName || course.name} | MAAC Greater Noida`,
-      description: course.description,
+      title: `${course.fullName || course.name} Course in Greater Noida | MAAC Institute`,
+      description: courseDescription,
     },
   };
 }
@@ -62,5 +82,13 @@ export default async function CourseDetailPage({ params }: PageProps) {
     notFound();
   }
 
-  return <CourseDetailPageClient category={category} course={course} />;
+  // Get FAQs for this course category
+  const faqs = getFAQsByCategory(categorySlug);
+
+  return (
+    <>
+      <CourseStructuredData course={course} category={category} faqs={faqs} />
+      <CourseDetailPageClient category={category} course={course} />
+    </>
+  );
 }

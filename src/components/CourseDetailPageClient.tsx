@@ -5,6 +5,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from './CourseDetailPage.module.css';
 import type { Course, CourseCategory } from '@/data/course-data';
+import FAQSection from './FAQSection';
+import { getFAQsByCategory } from '@/data/faq-data';
 
 interface CourseDetailProps {
   category: CourseCategory;
@@ -36,6 +38,25 @@ const CourseDetailPageClient: React.FC<CourseDetailProps> = ({ category, course 
     return () => observer.disconnect();
   }, []);
 
+  // Get FAQ data based on category
+  const getFAQCategory = (categorySlug: string): string => {
+    switch (categorySlug) {
+      case '3d-animation':
+        return '3d-animation';
+      case 'vfx-courses':
+        return 'vfx-courses';
+      case 'gaming-courses':
+        return 'gaming-courses';
+      case 'multimedia-design-courses':
+        return 'multimedia-design-courses';
+      default:
+        return 'general';
+    }
+  };
+
+  const faqCategory = getFAQCategory(category.slug);
+  const faqs = getFAQsByCategory(faqCategory);
+
   const navLinks = [
     { id: 'overview', label: 'Overview' },
     { id: 'curriculum', label: 'Curriculum' },
@@ -44,6 +65,10 @@ const CourseDetailPageClient: React.FC<CourseDetailProps> = ({ category, course 
   ];
   if (course.specializations && course.specializations.length > 0) {
     navLinks.push({ id: 'specializations', label: 'Specializations' });
+  }
+  // Add FAQ to navigation if FAQs are available
+  if (faqs.length > 0) {
+    navLinks.push({ id: 'faq', label: 'FAQ' });
   }
 
   return (
@@ -137,6 +162,17 @@ const CourseDetailPageClient: React.FC<CourseDetailProps> = ({ category, course 
                       </div>
                     ))}
                   </div>
+                </section>
+              )}
+
+              {/* FAQ Section */}
+              {faqs.length > 0 && (
+                <section id="faq" className={styles.contentSection}>
+                  <FAQSection 
+                    faqs={faqs}
+                    title="Frequently Asked Questions"
+                    subtitle="Get answers to common questions about this course"
+                  />
                 </section>
               )}
             </main>

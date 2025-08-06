@@ -214,6 +214,37 @@
   font-size: 0.9rem;
 }
 
+/* --- FAQ Section Integration --- */
+.contentSection .faqSection {
+  padding: 0;
+  background: none;
+}
+
+.contentSection .faqContainer {
+  padding: 0;
+}
+
+.contentSection .faqHeader {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.contentSection .faqTitle {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contentSection .faqSubtitle {
+  color: #b0b0b0;
+  max-width: none;
+  margin: 0;
+}
+
+.contentSection .faqList {
+  max-width: none;
+}
+
 /* --- Responsive Design --- */
 @media (max-width: 900px) {
   .layoutGrid {
@@ -258,6 +289,7 @@
   .courseHeroTitle { font-size: 2.2rem; }
   .courseHeroDescription { font-size: 1.1rem; }
   .contentSection h2 { font-size: 1.8rem; }
+  .contentSection .faqTitle { font-size: 1.8rem; }
 }
 
 @media (max-width: 480px) {
@@ -278,4 +310,5 @@
     padding-bottom: 3rem;
     margin-bottom: 3rem;
   }
+  .contentSection .faqTitle { font-size: 1.6rem; }
 }
