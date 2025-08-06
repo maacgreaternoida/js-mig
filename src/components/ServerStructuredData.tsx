@@ -34,41 +34,7 @@ export default function ServerStructuredData({ type }: ServerStructuredDataProps
         "https://www.facebook.com/maacgreaternoida",
         "https://www.instagram.com/maacgreaternoida",
         "https://www.linkedin.com/company/maac-greater-noida"
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Animation and VFX Courses",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Course",
-              "name": "3D Animation Courses"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Course",
-              "name": "VFX Courses"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Course",
-              "name": "Gaming Courses"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Course",
-              "name": "Design Courses"
-            }
-          }
-        ]
-      }
+      ]
     };
 
     return (
