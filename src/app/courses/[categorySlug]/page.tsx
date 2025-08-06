@@ -1,6 +1,8 @@
 import { notFound } from 'next/navigation';
 import { courseCategories } from '@/data/course-data';
 import CourseCategoryPageClient from '@/components/CourseCategoryPageClient';
+import CategoryStructuredData from '@/components/CategoryStructuredData';
+import { getFAQsByCategory } from '@/data/faq-data';
 import type { Metadata } from 'next';
 
 // This interface defines the shape of the params object
@@ -53,5 +55,13 @@ export default async function CourseCategoryPage({ params }: PageProps) { // FIX
     notFound();
   }
 
-  return <CourseCategoryPageClient category={category} />;
+  // Get FAQs for this category
+  const faqs = getFAQsByCategory(categorySlug);
+
+  return (
+    <>
+      <CategoryStructuredData category={category} faqs={faqs} />
+      <CourseCategoryPageClient category={category} />
+    </>
+  );
 }

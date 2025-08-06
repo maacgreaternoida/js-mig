@@ -90,6 +90,38 @@ export default function CourseStructuredData({ course, category, faqs }: CourseS
     }
   };
 
+  // BreadcrumbList structured data
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://maacgreaternoida.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Courses",
+        "item": "https://maacgreaternoida.com/courses"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": category.name,
+        "item": `https://maacgreaternoida.com/courses/${category.slug}`
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": course.name,
+        "item": `https://maacgreaternoida.com/courses/${category.slug}/${course.slug}`
+      }
+    ]
+  };
+
   // FAQ structured data
   const faqData = faqs && faqs.length > 0 ? {
     "@context": "https://schema.org",
@@ -111,6 +143,13 @@ export default function CourseStructuredData({ course, category, faqs }: CourseS
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(courseData),
+        }}
+      />
+      <Script
+        id="course-breadcrumb-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbData),
         }}
       />
       {faqData && (
