@@ -1,0 +1,211 @@
+.authContainer {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(1200px 600px at 20% 10%, rgba(134, 239, 172, 0.08), transparent),
+              radial-gradient(1000px 500px at 80% 90%, rgba(59, 130, 246, 0.10), transparent),
+              #0b1020;
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 28px;
+  color: #e5e7eb;
+}
+
+.title {
+  margin: 0 0 4px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 0 0 20px;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.form {
+  display: grid;
+  gap: 14px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e5e7eb;
+  outline: none;
+}
+
+.input:focus {
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.button {
+  margin-top: 6px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.error {
+  margin-top: 6px;
+  color: #fca5a5;
+  font-size: 13px;
+}
+
+.tableWrap {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.tableCard {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  color: #e5e7eb;
+}
+
+.tableHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logout {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #e5e7eb;
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.th, .td {
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.date {
+  color: #93c5fd;
+}
+
+/* Dashboard */
+.dashWrap {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(1200px 600px at 20% 10%, rgba(134, 239, 172, 0.08), transparent),
+              radial-gradient(1000px 500px at 80% 90%, rgba(59, 130, 246, 0.10), transparent),
+              #0b1020;
+  color: #e5e7eb;
+}
+
+.dashCard {
+  width: min(1100px, 92vw);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.dashHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dashTitle {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.dashSubtitle {
+  margin: 6px 0 18px;
+  color: #9ca3af;
+}
+
+.tileGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.tile {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 18px;
+  display: grid;
+  gap: 8px;
+}
+
+.tileTitle {
+  margin: 0;
+  font-weight: 700;
+}
+
+.tileDesc {
+  margin: 0;
+  color: #a1a1aa;
+  font-size: 14px;
+}
+
+.tileBtn {
+  justify-self: start;
+  margin-top: 6px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #22c55e, #14b8a6);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.dashTopActions {
+  display: flex;
+  gap: 10px;
+}
+
+.secondaryBtn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+

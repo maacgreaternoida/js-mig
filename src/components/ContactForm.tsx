@@ -53,17 +53,14 @@ const ContactForm: React.FC = () => {
       });
 
       if (!serviceId || !templateId || !publicKey) {
-        // Fallback: Log the form data and show success message
-        console.log('Contact Form Submission (Fallback Mode):', {
-          ...form,
-          from_name: form.name,
-          preferredCourse: form.course,
-          timestamp: new Date().toISOString()
+        // Fallback: persist to local leads store via API
+        const res = await fetch('/api/leads', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(form),
         });
-        
-        // Simulate successful submission
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        setStatus('Thank you! We will be in touch shortly. (Note: EmailJS not configured in production)');
+        if (!res.ok) throw new Error('Failed to submit lead');
+        setStatus('Thank you! We will be in touch shortly.');
         setForm({ name: '', email: '', phone: '', course: '' });
       } else {
         // Use EmailJS if configured
@@ -75,6 +72,12 @@ const ContactForm: React.FC = () => {
           publicKey
         );
         console.log('Email sent successfully via EmailJS');
+        // Also persist lead to API for admin viewing
+        await fetch('/api/leads', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(form),
+        }).catch(() => {});
         setStatus('Thank you! We will be in touch shortly.');
         setForm({ name: '', email: '', phone: '', course: '' });
       }

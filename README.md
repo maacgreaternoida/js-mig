@@ -2,7 +2,19 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+First, create a `.env.local` with your settings:
+
+```
+ADMIN_EMAIL=admin@example.com
+ADMIN_PASSWORD=change-me
+ADMIN_JWT_SECRET=replace-with-long-random-string
+
+# MongoDB (Atlas or self-hosted)
+MONGODB_URI=mongodb+srv://USER:PASSWORD@CLUSTER.mongodb.net/?retryWrites=true&w=majority
+MONGODB_DB=js-migration
+```
+
+Then, install and run the development server:
 
 ```bash
 npm run dev
