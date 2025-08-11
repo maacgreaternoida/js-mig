@@ -35,8 +35,11 @@ const DegreeBvocPageClient: React.FC = () => {
       <section className={styles.bvocHero}>
         <div className={styles.bvocHeroBg}></div>
         <div className={styles.bvocHeroContent}>
-          <h1 className={styles.bvocHeroTitle}><span className={styles.titleLine1}>B.VOC</span><span className={styles.titleLine2}>PROGRAM</span></h1>
-          <p className={styles.bvocHeroSubtitle}>Bachelor of Vocation in Animation & VFX</p>
+          <h1 className={styles.bvocHeroTitle}>
+            <span className={styles.titleLine1}>B.Voc in Animation & VFX</span>
+            <span className={styles.titleLine2}>Greater Noida (Delhi NCR)</span>
+          </h1>
+          <p className={styles.bvocHeroSubtitle}>UGC-recognized degree with 100% placement support, expert faculty, and project-based portfolio building.</p>
           <div className={styles.bvocHeroBadges}>
             <span className={styles.badge}>UGC Certified</span>
             <span className={styles.badge}>3 Years Program</span>
@@ -69,8 +72,8 @@ const DegreeBvocPageClient: React.FC = () => {
             <section id="overview" data-section className={styles.contentSection}>
               <div className={styles.sectionGrid}>
                 <div className={styles.contentText}>
-                  <h2>About B.Voc Program</h2>
-                  <p>The Bachelor of Vocation (B.Voc.) program has been launched by UGC to integrate industry-relevant skills into higher education, creating a perfect bridge between academic learning and professional requirements.</p>
+                  <h2>About the B.Voc Program</h2>
+                  <p>The Bachelor of Vocation (B.Voc.) in Animation & VFX is a UGC-recognized, skill-focused degree designed to blend academic learning with hands-on studio training. At MAAC Greater Noida, you will learn industry tools like Autodesk Maya, Nuke, Unreal Engine, Adobe After Effects, and Substance Painter while building a professional portfolio for jobs across Greater Noida, Noida, Ghaziabad, and Delhi NCR.</p>
                   <h3>Program Structure</h3>
                   <div className={styles.structureItems}>
                     <div className={styles.structureItem}><span>📋</span><div><h4>UG Certificate</h4><p>1 Year Program</p></div></div>
@@ -81,8 +84,10 @@ const DegreeBvocPageClient: React.FC = () => {
                 <div className={styles.contentVisual}>
                   <h3>Key Features</h3>
                   <ul>
-                    <li>Based on NSQF, CBCS and industry needs for flexible, modular structure</li>
-                    <li>Focuses on human-centric learning and entrepreneurship</li>
+                    <li>Training on Maya, Nuke, Unreal Engine, After Effects, Substance Painter</li>
+                    <li>Based on NSQF, CBCS and current industry needs with flexible, modular structure</li>
+                    <li>Project-based learning, showreel development, and career mentorship</li>
+                    <li>Human-centric learning and entrepreneurship modules</li>
                     <li>Multiple entry and exit points for maximum flexibility</li>
                     <li>Holistic development approach</li>
                     <li>Job-ready, skilled graduates aligned with national employment goals</li>
@@ -92,21 +97,21 @@ const DegreeBvocPageClient: React.FC = () => {
             </section>
             
             <section id="benefits" data-section className={styles.contentSection}>
-              <h2 className={styles.sectionTitle}>Benefits of B.Voc Program</h2>
+              <h2 className={styles.sectionTitle}>Benefits of the B.Voc Degree</h2>
               <div className={styles.benefitsGrid}>
-                <div className={styles.benefitCard}><span>💼</span><h3>Job-Ready Skills</h3><p>Combines job-related skills with general education for complete professional development.</p></div>
-                <div className={styles.benefitCard}><span>🏭</span><h3>Industry Alignment</h3><p>Follows the NSQF system to match industry skill needs and requirements.</p></div>
-                <div className={styles.benefitCard}><span>🛠️</span><h3>Practical Training</h3><p>Focuses on practical training and real job knowledge for immediate application.</p></div>
-                <div className={styles.benefitCard}><span>📈</span><h3>Enhanced Employability</h3><p>Helps improve employability and job opportunities in competitive markets.</p></div>
-                <div className={styles.benefitCard}><span>🔄</span><h3>Flexible Learning</h3><p>Offers flexibility with multiple entry and exit points for diverse career paths.</p></div>
-                <div className={styles.benefitCard}><span>🌍</span><h3>Global Opportunities</h3><p>Prepares students for local, national & international job markets.</p></div>
+                <div className={styles.benefitCard}><span>💼</span><h3>Job-Ready Skills</h3><p>Combines job-related skills with general education for complete professional development in animation and VFX.</p></div>
+                <div className={styles.benefitCard}><span>🏭</span><h3>Industry Alignment</h3><p>Aligned with NSQF to match current studio pipelines and Delhi NCR hiring needs.</p></div>
+                <div className={styles.benefitCard}><span>🛠️</span><h3>Practical Training</h3><p>Hands-on projects with Maya, Nuke, Unreal Engine, and After Effects to build a strong portfolio.</p></div>
+                <div className={styles.benefitCard}><span>📈</span><h3>Enhanced Employability</h3><p>100% placement support with resume building, interview prep, and studio tie-ups across Greater Noida, Noida, Ghaziabad & Delhi.</p></div>
+                <div className={styles.benefitCard}><span>🔄</span><h3>Flexible Learning</h3><p>Multiple entry/exit points and credit-based progression for diverse career paths.</p></div>
+                <div className={styles.benefitCard}><span>🌍</span><h3>Global Opportunities</h3><p>Skills aligned for local, national and international job markets, including OTT and gaming.</p></div>
               </div>
             </section>
 
             <section id="audience" data-section className={styles.contentSection}>
               <h2 className={styles.sectionTitle}>Who Can Apply?</h2>
               <div className={styles.audienceGrid}>
-                <div className={styles.audienceCard}><span>🎓</span><h3>Class 12th Graduates</h3><p>Students who have completed Class 12th and are creatively inclined.</p></div>
+                <div className={styles.audienceCard}><span>🎓</span><h3>Class 12th Graduates</h3><p>Students who have completed Class 12th and are creatively inclined, especially from Greater Noida, Noida, Ghaziabad and Delhi.</p></div>
                 <div className={styles.audienceCard}><span>🎨</span><h3>Arts & Design Graduates</h3><p>Graduates from arts, design, IT, and media-related streams.</p></div>
                 <div className={styles.audienceCard}><span>💡</span><h3>Creative Aspirants</h3><p>Passionate aspirants looking for careers in animation, VFX, and gaming.</p></div>
               </div>
@@ -132,6 +137,7 @@ const DegreeBvocPageClient: React.FC = () => {
                   <div className={styles.step}><div className={styles.stepNumber}>3</div><div><h4>Interview</h4><p>Personal interview with faculty members.</p></div></div>
                   <div className={styles.step}><div className={styles.stepNumber}>4</div><div><h4>Enrollment</h4><p>Complete enrollment and begin your journey.</p></div></div>
                 </div>
+                <p className={styles.noteText}>For counseling and seat availability for the B.Voc Animation & VFX degree in Greater Noida, Noida and Ghaziabad, contact our admissions team.</p>
               </div>
             </section>
         </div>

@@ -42,7 +42,10 @@ const CoursesPageClient: React.FC<CoursesPageClientProps> = ({ courseCategories,
             <span className={styles.titleLine2}>MAAC</span>
           </h1>
           <p className={styles.coursesHeroDescription}>
-            Discover world-class programs designed to transform your passion into a successful career. Learn from industry experts and master the tools used by professionals worldwide.
+            Discover world-class programs designed to transform your passion into a successful career in Greater Noida. Learn from industry experts and master the tools used by professionals worldwide with 100% placement support across Delhi NCR.
+          </p>
+          <p className={styles.coursesHeroDescription}>
+            Explore the best animation courses in Delhi NCR — alongside VFX, game design, graphic design, web design and UI/UX programs for students from Noida and Ghaziabad.
           </p>
           <div className={styles.heroStatsGrid}>
             <div className={styles.heroStatItem}><div className={styles.statNumber}>{totalCourses}+</div><div className={styles.statLabel}>Courses</div></div>
@@ -59,6 +62,9 @@ const CoursesPageClient: React.FC<CoursesPageClientProps> = ({ courseCategories,
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Choose Your Path</h2>
             <p className={styles.sectionSubtitle}>Select from our comprehensive range of industry-focused programs</p>
+            <p className={styles.sectionSubtitle}>
+              Many students search for the best animation courses in Delhi NCR, VFX courses in Noida, gaming courses in Ghaziabad, and graphic design courses across the region—find them all at MAAC Greater Noida.
+            </p>
           </div>
           <div className={styles.categoriesGrid}>
             {courseCategories.map((category) => (

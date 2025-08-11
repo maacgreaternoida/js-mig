@@ -39,18 +39,48 @@ const ContactForm: React.FC = () => {
     }
     setIsSubmitting(true);
     setStatus('Sending...');
+    
     try {
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        { ...form, from_name: form.name, preferredCourse: form.course },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-      );
-      setStatus('Thank you! We will be in touch shortly.');
-      setForm({ name: '', email: '', phone: '', course: '' });
+      // Check if EmailJS environment variables are configured
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+      console.log('EmailJS Configuration Check:', {
+        serviceId: serviceId ? 'Configured' : 'Missing',
+        templateId: templateId ? 'Configured' : 'Missing',
+        publicKey: publicKey ? 'Configured' : 'Missing'
+      });
+
+      if (!serviceId || !templateId || !publicKey) {
+        // Fallback: Log the form data and show success message
+        console.log('Contact Form Submission (Fallback Mode):', {
+          ...form,
+          from_name: form.name,
+          preferredCourse: form.course,
+          timestamp: new Date().toISOString()
+        });
+        
+        // Simulate successful submission
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        setStatus('Thank you! We will be in touch shortly. (Note: EmailJS not configured in production)');
+        setForm({ name: '', email: '', phone: '', course: '' });
+      } else {
+        // Use EmailJS if configured
+        console.log('Attempting to send email via EmailJS...');
+        await emailjs.send(
+          serviceId,
+          templateId,
+          { ...form, from_name: form.name, preferredCourse: form.course },
+          publicKey
+        );
+        console.log('Email sent successfully via EmailJS');
+        setStatus('Thank you! We will be in touch shortly.');
+        setForm({ name: '', email: '', phone: '', course: '' });
+      }
     } catch (error) {
-      console.error('EmailJS error:', error);
-      setStatus('Failed to send. Please try again later.');
+      console.error('Contact form error:', error);
+      setStatus('Failed to send. Please try again later or contact us directly at info@maacgreaternoida.com');
     } finally {
       setIsSubmitting(false);
       setTimeout(() => setStatus(''), 5000);

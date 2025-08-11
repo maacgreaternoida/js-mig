@@ -41,7 +41,7 @@ export default function CategoryStructuredData({ category, faqs }: CategoryStruc
     "@type": "CollectionPage",
     "name": `${category.name} Courses`,
     "description": category.description,
-    "url": `https://maacgreaternoida.com/courses/${category.slug}`,
+    "url": `https://www.maacgreaternoida.com/courses/${category.slug}`,
     "mainEntity": {
       "@type": "ItemList",
       "name": `${category.name} Course Collection`,
@@ -53,11 +53,11 @@ export default function CategoryStructuredData({ category, faqs }: CategoryStruc
           "@type": "Course",
           "name": course.fullName || course.name,
           "description": course.description,
-          "url": `https://maacgreaternoida.com/courses/${category.slug}/${course.slug}`,
+           "url": `https://www.maacgreaternoida.com/courses/${category.slug}/${course.slug}`,
           "provider": {
             "@type": "EducationalOrganization",
-            "name": "MAAC Greater Noida",
-            "url": "https://maacgreaternoida.com"
+             "name": "MAAC Greater Noida",
+             "url": "https://www.maacgreaternoida.com"
           },
           "educationalLevel": "Professional",
           "timeRequired": course.duration,
@@ -99,19 +99,19 @@ export default function CategoryStructuredData({ category, faqs }: CategoryStruc
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://maacgreaternoida.com"
+        "item": "https://www.maacgreaternoida.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Courses",
-        "item": "https://maacgreaternoida.com/courses"
+        "item": "https://www.maacgreaternoida.com/courses"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": category.name,
-        "item": `https://maacgreaternoida.com/courses/${category.slug}`
+        "item": `https://www.maacgreaternoida.com/courses/${category.slug}`
       }
     ]
   };

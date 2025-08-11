@@ -23,6 +23,7 @@ const geistMono = Geist_Mono({
 
 // --- SEO METADATA ---
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.maacgreaternoida.com'),
   // 1. Updated Title with Primary Keywords
   title: "MAAC Greater Noida | Best Animation, VFX & Gaming Institute",
   

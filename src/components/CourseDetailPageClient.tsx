@@ -79,8 +79,12 @@ const CourseDetailPageClient: React.FC<CourseDetailProps> = ({ category, course 
           <Link href={`/courses/${category.slug}`} className={styles.breadcrumbLink}>
             ← Back to {category.name}
           </Link>
-          <h1 className={styles.courseHeroTitle}>{course.fullName || course.name}</h1>
-          <p className={styles.courseHeroDescription}>{course.description}</p>
+          <h1 className={styles.courseHeroTitle}>
+            {(course.fullName || course.name)} in Greater Noida
+          </h1>
+          <p className={styles.courseHeroDescription}>
+            {course.description} This course is ideal for students across Delhi NCR, providing expert training right here in Greater Noida.
+          </p>
           <div className={styles.courseMeta}>
             <span className={styles.metaBadge}>{course.level}</span>
             <span className={styles.metaBadge}>{course.duration}</span>
@@ -121,6 +125,11 @@ const CourseDetailPageClient: React.FC<CourseDetailProps> = ({ category, course 
                     <div key={content.category} className={styles.curriculumCard}>
                       <h3>{content.category}</h3>
                       <ul>{content.items.map(item => <li key={item}>{item}</li>)}</ul>
+                      {content.category.toLowerCase().includes('composit') && (
+                        <p className={styles.noteText}>
+                          In the compositing module, you will get hands-on training with industry-standard tools like Nuke and Adobe After Effects.
+                        </p>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -139,7 +148,10 @@ const CourseDetailPageClient: React.FC<CourseDetailProps> = ({ category, course 
               </section>
 
               <section id="careers" className={styles.contentSection}>
-                <h2>Career Options</h2>
+                <h2>Career Prospects after this course in Delhi NCR</h2>
+                <p className={styles.sectionIntro}>
+                  Delhi NCR offers a thriving market for creatives. The skills you gain at MAAC Greater Noida prepare you for roles in studios across Greater Noida, Noida, Ghaziabad and Delhi.
+                </p>
                 <div className={styles.careerTags}>
                   {course.careerOptions.map(career => <span key={career} className={styles.careerTag}>{career}</span>)}
                 </div>

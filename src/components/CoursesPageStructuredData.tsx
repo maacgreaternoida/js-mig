@@ -26,7 +26,7 @@ export default function CoursesPageStructuredData({ courseCategories, faqs }: Co
     "@type": "CollectionPage",
     "name": "Courses at MAAC Greater Noida",
     "description": "Discover world-class programs designed to transform your passion into a successful career. Learn from industry experts and master the tools used by professionals worldwide.",
-    "url": "https://maacgreaternoida.com/courses",
+    "url": "https://www.maacgreaternoida.com/courses",
     "mainEntity": {
       "@type": "ItemList",
       "name": "MAAC Course Categories",
@@ -38,11 +38,11 @@ export default function CoursesPageStructuredData({ courseCategories, faqs }: Co
           "@type": "Course",
           "name": `${category.name} Courses`,
           "description": category.description,
-          "url": `https://maacgreaternoida.com/courses/${category.slug}`,
+          "url": `https://www.maacgreaternoida.com/courses/${category.slug}`,
           "provider": {
             "@type": "EducationalOrganization",
-            "name": "MAAC Greater Noida",
-            "url": "https://maacgreaternoida.com"
+             "name": "MAAC Greater Noida",
+             "url": "https://www.maacgreaternoida.com"
           },
           "educationalLevel": "Professional",
           "courseMode": "OnSite",
@@ -83,13 +83,13 @@ export default function CoursesPageStructuredData({ courseCategories, faqs }: Co
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://maacgreaternoida.com"
+        "item": "https://www.maacgreaternoida.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Courses",
-        "item": "https://maacgreaternoida.com/courses"
+        "item": "https://www.maacgreaternoida.com/courses"
       }
     ]
   };

@@ -42,29 +42,34 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: 'Course Not Found' };
   }
 
+  // Compute key software (take up to 2 prominent tools)
+  const keySoftware = (course.softwareCovered || []).slice(0, 2).map(s => s.name).join(', ');
+
   // Generate location-specific keywords
   const locationKeywords = [
     `${course.name.toLowerCase()} course in Greater Noida`,
-    `${course.name.toLowerCase()} training Noida`,
-    `${course.name.toLowerCase()} institute Delhi NCR`
+    `${course.name.toLowerCase()} training in Noida`,
+    `${course.name.toLowerCase()} institute in Delhi NCR`
   ];
 
-  // Generate course-specific description
-  const courseDescription = `Learn ${course.name.toLowerCase()} in Greater Noida with MAAC. ${course.description} Get placement assistance and start your career in ${category?.name.toLowerCase()}.`;
+  // Formula-based meta
+  const title = `${course.fullName || course.name} in Greater Noida | Learn ${keySoftware || 'Industry Tools'} | MAAC`;
+  const courseDescription = `Join our top-rated ${course.fullName || course.name} in Greater Noida. Master ${keySoftware || 'industry-standard tools'} and get 100% placement support. Inquire now to build your creative career!`;
 
   return {
-    title: `${course.fullName || course.name} Course in Greater Noida | MAAC Institute`,
+    title,
     description: courseDescription,
     keywords: [
-      `${course.name.toLowerCase()} course Greater Noida`,
-      `${course.name.toLowerCase()} training Noida`,
-      `${course.name.toLowerCase()} institute Delhi NCR`,
+      `${course.name.toLowerCase()} course in Greater Noida`,
+      `${course.name.toLowerCase()} training in Noida`,
+      `${course.name.toLowerCase()} institute in Delhi NCR`,
       `MAAC ${course.name.toLowerCase()} course`,
       `${category?.name.toLowerCase()} course Greater Noida`,
       ...locationKeywords
     ].join(', '),
+    alternates: { canonical: `/courses/${category?.slug}/${course.slug}` },
     openGraph: {
-      title: `${course.fullName || course.name} Course in Greater Noida | MAAC Institute`,
+      title,
       description: courseDescription,
     },
   };

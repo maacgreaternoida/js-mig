@@ -12,9 +12,9 @@ export default function ServerStructuredData({ type }: ServerStructuredDataProps
       "name": "MAAC Greater Noida",
       "alternateName": "MAAC Animation Academy Greater Noida",
       "description": "Leading institute for animation, VFX, gaming, and design courses in Greater Noida. Offering professional training with 100% placement assistance.",
-      "url": "https://maacgreaternoida.com",
-      "logo": "https://maacgreaternoida.com/maac-logo-hero.webp",
-      "image": "https://maacgreaternoida.com/maac-logo-hero.webp",
+      "url": "https://www.maacgreaternoida.com",
+      "logo": "https://www.maacgreaternoida.com/maac-logo-hero.webp",
+      "image": "https://www.maacgreaternoida.com/maac-logo-hero.webp",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "MAAC Greater Noida",

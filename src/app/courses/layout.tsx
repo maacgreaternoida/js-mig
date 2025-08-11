@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     title: 'All Courses - Animation, VFX, Gaming & Design | MAAC Greater Noida',
     description: 'Explore our comprehensive range of animation, VFX, gaming, and design courses.',
     type: 'website',
-    url: 'https://maacgreaternoida.com/courses', // Replace with your actual domain
+    url: 'https://www.maacgreaternoida.com/courses', // Replace with your actual domain
     images: [
       {
-        url: 'https://maacgreaternoida.com/maac-logo-hero.webp', // Replace with your actual domain
+        url: 'https://www.maacgreaternoida.com/maac-logo-hero.webp', // Replace with your actual domain
         width: 800,
         height: 600,
         alt: 'MAAC Greater Noida',
@@ -28,12 +28,12 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'All Courses - Animation, VFX, Gaming & Design | MAAC Greater Noida',
     description: 'Explore our comprehensive range of animation, VFX, gaming, and design courses.',
-    images: ['https://maacgreaternoida.com/maac-logo-hero.webp'], // Replace with your actual domain
+    images: ['https://www.maacgreaternoida.com/maac-logo-hero.webp'], // Replace with your actual domain
   },
 
   // Canonical URL
   alternates: {
-    canonical: 'https://maacgreaternoida.com/courses', // Replace with your actual domain
+    canonical: 'https://www.maacgreaternoida.com/courses', // Replace with your actual domain
   },
 };
 

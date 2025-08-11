@@ -45,7 +45,7 @@ export default function CourseStructuredData({ course, category, faqs }: CourseS
     "provider": {
       "@type": "EducationalOrganization",
       "name": "MAAC Greater Noida",
-      "url": "https://maacgreaternoida.com",
+      "url": "https://www.maacgreaternoida.com",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Greater Noida",
@@ -99,25 +99,25 @@ export default function CourseStructuredData({ course, category, faqs }: CourseS
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://maacgreaternoida.com"
+        "item": "https://www.maacgreaternoida.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Courses",
-        "item": "https://maacgreaternoida.com/courses"
+        "item": "https://www.maacgreaternoida.com/courses"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": category.name,
-        "item": `https://maacgreaternoida.com/courses/${category.slug}`
+        "item": `https://www.maacgreaternoida.com/courses/${category.slug}`
       },
       {
         "@type": "ListItem",
         "position": 4,
         "name": course.name,
-        "item": `https://maacgreaternoida.com/courses/${category.slug}/${course.slug}`
+        "item": `https://www.maacgreaternoida.com/courses/${category.slug}/${course.slug}`
       }
     ]
   };

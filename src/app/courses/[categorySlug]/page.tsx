@@ -33,12 +33,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
+  const title = `Best ${category.name} Courses in Greater Noida & Delhi NCR | MAAC`;
+  const description = `Explore our range of job-oriented ${category.name} courses at MAAC Greater Noida. We train students from Noida, Ghaziabad, and across Delhi NCR.`;
   return {
-    title: `${category.name} Courses | MAAC Greater Noida`,
-    description: category.description,
+    title,
+    description,
+    alternates: { canonical: `/courses/${category.slug}` },
     openGraph: {
-      title: `${category.name} Courses | MAAC Greater Noida`,
-      description: category.description,
+      title,
+      description,
       images: [{ url: `/courses/${category.slug}-og.jpg` }], // Assumes you create an OG image for each category
     },
   };
