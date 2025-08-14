@@ -68,7 +68,327 @@ body {
 .about-section .btn-secondary { color: #fff; background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.22); }
 .about-section .btn-secondary:hover { background: rgba(255,255,255,0.18); }
 
+/* Brand Authority Section Styles */
+.brand-authority-section { 
+  padding: 4rem 0; 
+  background: linear-gradient(135deg, rgba(0,212,255,0.03), rgba(131,56,236,0.03));
+}
+.brand-authority-section .container { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 1.5rem; 
+}
+.brand-authority-section .card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(0,212,255,0.15);
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,212,255,0.08);
+}
+.brand-authority-section .badge {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(131,56,236,0.15));
+  border: 1px solid rgba(0,212,255,0.4);
+  color: #00d4ff;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+.brand-authority-section .title {
+  font-family: var(--font-geist-mono), monospace;
+  font-weight: 800;
+  font-size: 2.1rem;
+  margin: 0 0 0.75rem 0;
+  background: linear-gradient(135deg, #00d4ff, #ffffff);
+  -webkit-background-clip: text; 
+  background-clip: text; 
+  -webkit-text-fill-color: transparent;
+}
+.brand-authority-section .subtitle {
+  color: #c9c9c9;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 820px;
+  margin: 0 auto 1.5rem auto;
+}
+.brand-authority-section .brand-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.brand-authority-section .highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.brand-authority-section .highlight-item .icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+.brand-authority-section .highlight-item .text {
+  color: #e0e0e0;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.brand-authority-section .buttons { 
+  display: flex; 
+  justify-content: center; 
+  gap: 1rem; 
+  flex-wrap: wrap; 
+}
+.brand-authority-section .btn { 
+  text-decoration: none; 
+  font-weight: 600; 
+  padding: 0.85rem 1.6rem; 
+  border-radius: 999px; 
+  font-size: 1rem; 
+  border: 1px solid transparent; 
+  transition: all 0.3s ease;
+}
+.brand-authority-section .btn-primary { 
+  color: #fff; 
+  background: linear-gradient(135deg, #00d4ff, #8338ec); 
+  box-shadow: 0 10px 25px rgba(0,212,255,0.18); 
+}
+.brand-authority-section .btn-primary:hover { 
+  transform: translateY(-1px); 
+  box-shadow: 0 12px 28px rgba(0,212,255,0.28); 
+}
+.brand-authority-section .btn-secondary { 
+  color: #fff; 
+  background: rgba(255,255,255,0.10); 
+  border: 1px solid rgba(255,255,255,0.22); 
+}
+  .brand-authority-section .btn-secondary:hover { 
+    background: rgba(255,255,255,0.18); 
+  }
+
+/* MAAC Greater Noida Brand Page Styles */
+.maac-greater-noida-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
+}
+
+.maac-greater-noida-page .hero-section {
+  padding: 6rem 0 4rem;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(0,212,255,0.05), rgba(131,56,236,0.05));
+}
+
+.maac-greater-noida-page .hero-content .main-title {
+  font-family: var(--font-geist-mono), monospace;
+  font-weight: 900;
+  font-size: 3.5rem;
+  margin: 0 0 1rem 0;
+  background: linear-gradient(135deg, #00d4ff, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(0,212,255,0.3);
+}
+
+.maac-greater-noida-page .hero-content .subtitle {
+  font-size: 1.5rem;
+  color: #00d4ff;
+  margin: 0 0 1.5rem 0;
+  font-weight: 600;
+}
+
+.maac-greater-noida-page .hero-content .description {
+  color: #c9c9c9;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+}
+
+.maac-greater-noida-page .cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.maac-greater-noida-page .btn {
+  text-decoration: none;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.maac-greater-noida-page .btn-primary {
+  color: #fff;
+  background: linear-gradient(135deg, #00d4ff, #8338ec);
+  box-shadow: 0 10px 25px rgba(0,212,255,0.25);
+}
+
+.maac-greater-noida-page .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(0,212,255,0.35);
+}
+
+.maac-greater-noida-page .btn-secondary {
+  color: #fff;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.22);
+}
+
+.maac-greater-noida-page .btn-secondary:hover {
+  background: rgba(255,255,255,0.18);
+}
+
+.maac-greater-noida-page .institute-details {
+  padding: 4rem 0;
+}
+
+.maac-greater-noida-page .details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.maac-greater-noida-page .detail-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(0,212,255,0.15);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.maac-greater-noida-page .detail-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,212,255,0.15);
+  border-color: rgba(0,212,255,0.3);
+}
+
+.maac-greater-noida-page .detail-card h3 {
+  color: #00d4ff;
+  font-size: 1.3rem;
+  margin: 0 0 1.5rem 0;
+  font-weight: 700;
+}
+
+.maac-greater-noida-page .detail-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.maac-greater-noida-page .detail-card li {
+  color: #e0e0e0;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-size: 0.95rem;
+}
+
+.maac-greater-noida-page .detail-card li:last-child {
+  border-bottom: none;
+}
+
+.maac-greater-noida-page .location-contact {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, rgba(131,56,236,0.03), rgba(0,212,255,0.03));
+}
+
+.maac-greater-noida-page .location-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.maac-greater-noida-page .location-content h2 {
+  color: #00d4ff;
+  font-size: 2rem;
+  margin: 0 0 1.5rem 0;
+  font-weight: 700;
+}
+
+.maac-greater-noida-page .location-content p {
+  color: #c9c9c9;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0 0 2rem 0;
+}
+
+.maac-greater-noida-page .contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.maac-greater-noida-page .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #e0e0e0;
+  font-weight: 500;
+}
+
+.maac-greater-noida-page .contact-item .icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .maac-greater-noida-page .hero-content .main-title {
+    font-size: 2.5rem;
+  }
+  
+  .maac-greater-noida-page .hero-content .subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .maac-greater-noida-page .details-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .maac-greater-noida-page .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .maac-greater-noida-page .btn {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+}
+
 @media (max-width: 768px) {
   .about-section .title { font-size: 1.6rem; }
   .about-section .subtitle { font-size: 1rem; }
+  
+  .brand-authority-section .title { font-size: 1.6rem; }
+  .brand-authority-section .subtitle { font-size: 1rem; }
+  .brand-authority-section .brand-highlights {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .brand-authority-section .highlight-item {
+    padding: 0.75rem;
+  }
 }

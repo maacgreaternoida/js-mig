@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   title: "MAAC Greater Noida | Best Animation, VFX & Gaming Institute",
   
   // 2. Updated Description with Long-tail Keywords
-  description: "Join MAAC Greater Noida, the leading institute for career courses in 3D Animation, VFX, Game Design, and Multimedia. Get 100% placement support and learn from expert faculty.",
+  description: "Join MAAC Greater Noida, the leading institute for career courses in 3D Animation, VFX, Game Design, and Multimedia. Located at Office No 601, 6th Floor, OM Tower, Alpha 1 Commercial Belt. Call 08048052804 for admission. Get 100% placement support and learn from expert faculty.",
   
   // 3. Comprehensive Keywords List
   keywords: [
@@ -46,7 +46,9 @@ export const metadata: Metadata = {
     "MAAC animation course",
     "VFX institute Delhi NCR",
     "Unity game development course",
-    "Adobe Creative Suite training"
+    "Adobe Creative Suite training",
+    "MAAC Greater Noida OM Tower",
+    "MAAC Greater Noida Alpha 1 Commercial Belt"
   ],
 };
 

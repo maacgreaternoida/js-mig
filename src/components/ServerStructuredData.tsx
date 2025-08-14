@@ -17,7 +17,7 @@ export default function ServerStructuredData({ type }: ServerStructuredDataProps
       "image": "https://www.maacgreaternoida.com/maac-logo-hero.webp",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "MAAC Greater Noida",
+        "streetAddress": "Office No 601, 6th Floor, OM Tower, Alpha 1 Commercial Belt",
         "addressLocality": "Greater Noida",
         "addressRegion": "Uttar Pradesh",
         "postalCode": "201310",
@@ -25,10 +25,45 @@ export default function ServerStructuredData({ type }: ServerStructuredDataProps
       },
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+91-XXXXXXXXXX",
+        "telephone": "+91-8048052804",
         "contactType": "customer service",
-        "areaServed": "IN",
-        "availableLanguage": ["English", "Hindi"]
+        "areaServed": ["IN", "Delhi NCR", "Greater Noida", "Noida", "Ghaziabad"],
+        "availableLanguage": ["English", "Hindi"],
+        "hoursAvailable": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "28.4744",
+        "longitude": "77.5040"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Greater Noida"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Animation & VFX Courses",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Course",
+              "name": "3D Animation Course"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Course",
+              "name": "VFX Course"
+            }
+          }
+        ]
       },
       "sameAs": [
         "https://www.facebook.com/maacgreaternoida",
