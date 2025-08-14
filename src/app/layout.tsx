@@ -58,6 +58,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Google Tag Manager */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0LDPJDPBC1"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-0LDPJDPBC1');
+            `,
+          }}
+        />
+        
         <link rel="preload" href="/maac-logo-hero.webp" as="image" type="image/webp" />
         <style dangerouslySetInnerHTML={{
           __html: `
