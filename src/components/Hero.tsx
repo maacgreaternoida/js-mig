@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import styles from './Hero.module.css';
 import ClientVideoPlayer from './ClientVideoPlayer';
 import ClientScrollButton from './ClientScrollButton';

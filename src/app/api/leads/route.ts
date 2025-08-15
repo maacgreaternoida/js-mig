@@ -18,7 +18,7 @@ export async function GET(request: NextRequest) {
         .sort({ createdAt: -1 })
         .toArray();
       return NextResponse.json({ leads });
-    } catch (e) {
+    } catch {
       // Fallback to file store on DB errors
       const leads = readLeads();
       return NextResponse.json({ leads });
@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
         const doc = { name, email, phone, course, createdAt: new Date().toISOString() };
         await col.insertOne(doc);
         return NextResponse.json({ lead: doc }, { status: 201 });
-      } catch (e) {
+      } catch {
         // Fallback to file store
         const created = appendLead({ name, email, phone, course });
         return NextResponse.json({ lead: created }, { status: 201 });

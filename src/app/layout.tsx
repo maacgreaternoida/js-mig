@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ServerStructuredData from "@/components/ServerStructuredData";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -61,8 +62,9 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Google Tag Manager */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0LDPJDPBC1"></script>
-        <script
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-0LDPJDPBC1" />
+        <Script
+          id="google-analytics"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "MAAC Greater Noida - Official Animation & VFX Institute | #1 in Greater Noida",
@@ -47,8 +48,8 @@ export default function MAACGreaterNoidaPage() {
               serving Greater Noida, Noida, and Delhi NCR. We provide industry-standard training with 100% placement assistance.
             </p>
             <div className="cta-buttons">
-              <a href="/courses" className="btn btn-primary">Explore Courses</a>
-              <a href="/contact" className="btn btn-secondary">Contact Us</a>
+              <Link href="/courses" className="btn btn-primary">Explore Courses</Link>
+              <Link href="/contact" className="btn btn-secondary">Contact Us</Link>
             </div>
           </div>
         </div>
