@@ -18,7 +18,7 @@ const courseCategories: CourseCategory[] = [
   { name: '3D Animation', slug: '3d-animation', iconImage: '/courses-img/3d-animation-gif.webp', description: 'Master the art of 3D animation and filmmaking.' },
   { name: 'VFX Courses', slug: 'vfx-courses', iconImage: '/courses-img/vfx-icon.webp',  description: 'Create stunning visual effects for films and games.' },
   { name: 'Gaming Courses', slug: 'gaming-courses', iconImage: '/courses-img/gaming-icon.webp', description: 'Design and develop immersive gaming experiences.' },
-  { name: 'Multimedia & Design', slug: 'multimedia-design-courses', iconImage: '/courses-img/ui-ux-icon.webp', description: 'Build beautiful digital designs and user interfaces.' },
+  { name: 'Multimedia & Design', slug: 'multimedia-design-courses', iconImage: '/courses-img/ui-ux-icon.webp', description: 'Master <strong>graphic design</strong>, web design, and user interfaces with industry-standard tools.' },
   { name: 'Short Term Courses', slug: 'short-term-courses', iconImage: '/courses-img/short-term.webp', description: 'Quickly learn new skills with our specialized programs.' },
 ];
 
