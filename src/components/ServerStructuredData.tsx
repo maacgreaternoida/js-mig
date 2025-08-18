@@ -47,23 +47,7 @@ export default function ServerStructuredData({ type }: ServerStructuredDataProps
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Animation & VFX Courses",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Course",
-              "name": "3D Animation Course"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Course",
-              "name": "VFX Course"
-            }
-          }
-        ]
+        "name": "Animation & VFX Courses"
       },
       "sameAs": [
         "https://www.facebook.com/maacgreaternoida",
