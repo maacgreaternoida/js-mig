@@ -7,7 +7,7 @@ import ContactForm from "@/components/ContactForm";
 //
 
 export const metadata = {
-  title: "MAAC Greater Noida - Official Animation & VFX Institute | #1 in Greater Noida",
+  title: "MAAC Greater Noida | Best Animation, VFX & Gaming Institute In Delhi NCR",
   description: "MAAC Greater Noida - The official and leading animation, VFX & gaming institute in Greater Noida. Located at Office No 601, 6th Floor, OM Tower, Alpha 1 Commercial Belt. Call 08048052804 for admission. 100% placement guarantee, expert faculty, industry-standard training.",
   keywords: [
     "MAAC Greater Noida",

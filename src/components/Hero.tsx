@@ -41,7 +41,10 @@ const Hero: React.FC = () => {
           </h1>
         </div>
         
-        <p className={styles.heroSubtitle}>{SUBTITLE}. Serving students from Greater Noida, Noida and Ghaziabad with 100% placement support and industry-expert faculty.</p>
+        <p className={styles.heroSubtitle}>
+          <strong>MAAC Greater Noida</strong> is the leading institute for Animation, VFX, Gaming and Graphic Design in Delhi NCR. 
+          Serving students from Greater Noida, Noida and Ghaziabad with 100% placement support and industry-expert faculty.
+        </p>
         
         <div className={styles.heroCtaButtons}>
           <ClientScrollButton />
