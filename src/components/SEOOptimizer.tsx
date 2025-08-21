@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { contentMapping, getKeywordsByPage } from '@/data/keyword-mapping';
+import { contentMapping } from '@/data/keyword-mapping';
 
 interface SEOOptimizerProps {
   pageType: string;
@@ -10,7 +10,6 @@ interface SEOOptimizerProps {
 
 const SEOOptimizer: React.FC<SEOOptimizerProps> = ({ pageType, children }) => {
   const mapping = contentMapping[pageType];
-  // const pageKeywords = getKeywordsByPage(pageType);
 
   if (!mapping) {
     return <>{children}</>;

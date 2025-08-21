@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import styles from './Hero.module.css';
 
 const ClientVideoPlayer: React.FC = () => {
@@ -18,9 +19,11 @@ const ClientVideoPlayer: React.FC = () => {
     <>
       {/* Poster image that shows while video loads or if video has error */}
       {(!shouldLoadVideo || !videoLoaded || videoHasError) && (
-        <img
+        <Image
           src="/hero-poster.webp"
           alt="Hero Poster"
+          width={1920}
+          height={1080}
           className={styles.heroBgVideo}
           style={{ objectFit: 'cover', objectPosition: 'center' }}
         />

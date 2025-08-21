@@ -113,7 +113,7 @@ const CourseCategoryPageClient: React.FC<{ category: CourseCategory }> = ({ cate
                   <h3>Comprehensive Animation Diploma in Greater Noida</h3>
                   <p>
                     Our <strong>animation diploma in Greater Noida</strong> programs range from 12 months to 24 months, 
-                    catering to different skill levels and career goals. Whether you're looking for 
+                    catering to different skill levels and career goals. Whether you&apos;re looking for 
                     <strong>animation courses after 12th</strong> or want to enhance existing skills, 
                     our <strong>MAAC animation course Greater Noida</strong> provides the perfect foundation.
                   </p>
@@ -186,7 +186,7 @@ const CourseCategoryPageClient: React.FC<{ category: CourseCategory }> = ({ cate
               <h2>Animation Diploma in Greater Noida - Choose Your Path</h2>
               <p>
                 Our <strong>MAAC animation course Greater Noida</strong> offers three specialized programs designed 
-                to meet different career goals and skill levels. Whether you're a beginner or looking to advance your 
+                to meet different career goals and skill levels. Whether you&apos;re a beginner or looking to advance your 
                 skills, our <strong>animation courses in Greater Noida</strong> provide comprehensive training with 
                 industry-standard software and real-world projects.
               </p>

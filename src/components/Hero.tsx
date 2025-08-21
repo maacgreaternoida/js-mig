@@ -1,12 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './Hero.module.css';
 import ClientVideoPlayer from './ClientVideoPlayer';
 import ClientScrollButton from './ClientScrollButton';
 
 const WELCOME = 'Welcome to';
 const GREATER_NOIDA = 'Greater Noida';
-const SUBTITLE = 'Leading institute for Animation, VFX, Gaming and Graphic Design in Delhi NCR';
 
 const Hero: React.FC = () => {
   return (
@@ -23,14 +23,13 @@ const Hero: React.FC = () => {
         
         <div className={styles.heroTitleContainer}>
           <div className={styles.heroLogoWrapper}>
-            <img 
+            <Image 
               src="/maac-logo-hero.webp" 
               alt="MAAC Logo" 
+              width={200}
+              height={80}
               className={styles.heroLogo}
               style={{ 
-                width: 'auto', 
-                height: '80px',
-                display: 'block',
                 filter: 'drop-shadow(0 0 15px rgba(0, 212, 255, 0.3))',
                 maxWidth: '100%'
               }}
