@@ -52,7 +52,13 @@ const CourseCategoryPageClient: React.FC<{ category: CourseCategory }> = ({ cate
             {category.description} These are job-oriented {category.name.toLowerCase()} programs designed for students from Greater Noida, Noida, Ghaziabad and across Delhi NCR.
           </p>
           {category.slug === '3d-animation' && (
-            <p className={styles.categoryHeroDescription}>Looking for the best animation courses in Delhi NCR? Our 3D Animation programs cover Maya, ZBrush and production-ready workflows with placement support.</p>
+            <p className={styles.categoryHeroDescription}>
+              Discover the <strong>best animation courses in Greater Noida</strong> at MAAC, the leading 
+              <strong>3D animation institute in Greater Noida</strong>. Our comprehensive programs are perfect for 
+              students seeking <strong>animation courses after 12th</strong> with industry-standard training on Maya, 
+              ZBrush, and production-ready workflows. Get <strong>animation training with placement in Greater Noida</strong> 
+              and start your creative career journey.
+            </p>
           )}
           {category.slug === 'vfx-courses' && (
             <p className={styles.categoryHeroDescription}>Train on industry tools like Nuke, Fusion and Houdini. Ideal for students searching for VFX course in Noida and Delhi NCR with studio-focused training.</p>
@@ -79,6 +85,82 @@ const CourseCategoryPageClient: React.FC<{ category: CourseCategory }> = ({ cate
         </div>
       </section>
 
+      {/* Animation-Specific Content Section */}
+      {category.slug === '3d-animation' && (
+        <section className={styles.animationContentSection}>
+          <div className={styles.container}>
+            <div className={styles.contentGrid}>
+              <div className={styles.contentMain}>
+                <h2>Leading 3D Animation Institute in Greater Noida</h2>
+                <p>
+                  As the <strong>best animation academy in Greater Noida</strong>, MAAC offers comprehensive 
+                  <strong>animation courses in Greater Noida</strong> designed to transform creative passion into 
+                  professional success. Our <strong>3D animation institute in Greater Noida</strong> provides 
+                  industry-standard training with cutting-edge technology and expert faculty.
+                </p>
+                
+                <h3>Why Choose Our Animation Training with Placement in Greater Noida?</h3>
+                <ul>
+                  <li>✅ Industry-standard software training (Maya, ZBrush, 3ds Max)</li>
+                  <li>✅ Project-based learning with real-world applications</li>
+                  <li>✅ Expert faculty with studio experience</li>
+                  <li>✅ 100% placement assistance across Delhi NCR</li>
+                  <li>✅ Studio visits and industry exposure</li>
+                  <li>✅ Modern infrastructure and equipment</li>
+                </ul>
+
+                <div className={styles.courseOverview}>
+                  <h3>Comprehensive Animation Diploma in Greater Noida</h3>
+                  <p>
+                    Our <strong>animation diploma in Greater Noida</strong> programs range from 12 months to 24 months, 
+                    catering to different skill levels and career goals. Whether you're looking for 
+                    <strong>animation courses after 12th</strong> or want to enhance existing skills, 
+                    our <strong>MAAC animation course Greater Noida</strong> provides the perfect foundation.
+                  </p>
+                </div>
+
+                <div className={styles.feesInfo}>
+                  <h3>Animation Course Fees in Greater Noida</h3>
+                  <p>
+                    We understand that <strong>animation course fees in Greater Noida</strong> are an important 
+                    consideration for students. Our programs offer excellent value with flexible payment options, 
+                    making quality animation education accessible to aspiring creatives across Delhi NCR.
+                  </p>
+                  <div className={styles.ctaInline}>
+                    <Link href="/contact" className={styles.ctaInlineBtn}>Get Detailed Fee Structure</Link>
+                  </div>
+                </div>
+              </div>
+              
+              <div className={styles.contentSidebar}>
+                <div className={styles.sidebarCard}>
+                  <h4>Quick Facts</h4>
+                  <ul>
+                    <li><strong>Location:</strong> Greater Noida, Delhi NCR</li>
+                    <li><strong>Programs:</strong> 3 specialized courses</li>
+                    <li><strong>Duration:</strong> 12-24 months</li>
+                    <li><strong>Placement:</strong> 100% assistance</li>
+                    <li><strong>Software:</strong> Maya, ZBrush, 3ds Max</li>
+                  </ul>
+                </div>
+                
+                <div className={styles.sidebarCard}>
+                  <h4>Career Prospects</h4>
+                  <p>Our <strong>animation training with placement in Greater Noida</strong> prepares you for roles in:</p>
+                  <ul>
+                    <li>🎬 3D Modeling Artist</li>
+                    <li>🎭 Character Animator</li>
+                    <li>💡 Lighting Artist</li>
+                    <li>🎨 Texture Artist</li>
+                    <li>🚀 Render Artist</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Filter Section */}
       <section className={styles.courseFilters}>
         <div className={styles.container}>
@@ -99,6 +181,17 @@ const CourseCategoryPageClient: React.FC<{ category: CourseCategory }> = ({ cate
       {/* Courses Grid */}
       <section className={styles.coursesShowcase}>
         <div className={styles.container}>
+          {category.slug === '3d-animation' && (
+            <div className={styles.coursesIntro}>
+              <h2>Animation Diploma in Greater Noida - Choose Your Path</h2>
+              <p>
+                Our <strong>MAAC animation course Greater Noida</strong> offers three specialized programs designed 
+                to meet different career goals and skill levels. Whether you're a beginner or looking to advance your 
+                skills, our <strong>animation courses in Greater Noida</strong> provide comprehensive training with 
+                industry-standard software and real-world projects.
+              </p>
+            </div>
+          )}
           <div className={styles.coursesGrid}>
             {filteredCourses.map((course) => (
               <div key={course.slug} className={styles.modernCourseCard}>
@@ -129,6 +222,16 @@ const CourseCategoryPageClient: React.FC<{ category: CourseCategory }> = ({ cate
         <div className={styles.container}>
           <h2>Ready to Start Your {category.name} Journey?</h2>
           <p>Join thousands of successful students who have transformed their passion into a thriving career.</p>
+          {category.slug === '3d-animation' && (
+            <div className={styles.ctaAdditional}>
+              <p>
+                Start your journey with the <strong>best animation academy in Greater Noida</strong>. 
+                Our <strong>animation course fees in Greater Noida</strong> are designed to provide 
+                excellent value with flexible payment options. Get <strong>animation training with placement 
+                in Greater Noida</strong> and unlock your creative potential.
+              </p>
+            </div>
+          )}
           <div className={styles.ctaButtons}>
             <Link href="/contact" className={styles.ctaPrimary}>Apply Now</Link>
             <a href="/brochure.pdf" download className={styles.ctaSecondary}>Download Brochure</a>
