@@ -3,11 +3,20 @@ import { createSessionToken } from '@/lib/auth';
 
 export async function POST(request: NextRequest) {
   const { email, password } = await request.json();
-  const adminEmail = process.env.ADMIN_EMAIL || 'admin@example.com';
-  const adminPassword = process.env.ADMIN_PASSWORD || 'change-me';
+  
+  // ✅ REMOVING hardcoded fallbacks for security
+  const adminEmail = process.env.ADMIN_EMAIL;
+  const adminPassword = process.env.ADMIN_PASSWORD;
+  
+  // ✅ ADDING proper error handling
+  if (!adminEmail || !adminPassword) {
+    return NextResponse.json({ message: 'Server configuration error' }, { status: 500 });
+  }
+  
   if (!email || !password) {
     return NextResponse.json({ message: 'Missing credentials' }, { status: 400 });
   }
+  
   if (email !== adminEmail || password !== adminPassword) {
     return NextResponse.json({ message: 'Invalid credentials' }, { status: 401 });
   }
