@@ -30,7 +30,7 @@ export default function LeadPopup({ delayMs = 4000, minScrollPx = 120, suppressi
     const suppressed = window.localStorage.getItem(suppressionKey);
     if (suppressed === 'true') return;
 
-    let timer = window.setTimeout(() => setOpen(true), delayMs);
+    const timer = window.setTimeout(() => setOpen(true), delayMs);
     const onScroll = () => {
       if (window.scrollY > minScrollPx) {
         setOpen(true);
