@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ServerStructuredData from "@/components/ServerStructuredData";
 import Script from "next/script";
+import ClientLeadPopup from "@/components/ClientLeadPopup";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -123,6 +124,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <ClientLeadPopup />
       </body>
     </html>
   );
