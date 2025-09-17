@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, FormEvent, ChangeEvent, useCallback } from 'react';
+import emailjs from '@emailjs/browser';
 import styles from './LeadPopup.module.css';
 
 const UserIcon = () => <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>;
@@ -75,11 +76,31 @@ export default function LeadPopup({ delayMs = 4000, minScrollPx = 120, suppressi
     setSubmitting(true);
     setStatus('Sending...');
     try {
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+      if (serviceId && templateId && publicKey) {
+        await emailjs.send(
+          serviceId,
+          templateId,
+          {
+            from_name: form.name,
+            phone: form.phone,
+            preferredCourse: form.topic,
+            message: `Popup lead: ${form.name} (${form.phone}) interested in ${form.topic}`,
+          },
+          publicKey
+        );
+      }
+
+      // Persist to DB via API regardless
       await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: form.name, phone: form.phone, course: form.topic }),
       });
+
       setStatus('Thank you! We will contact you shortly.');
       setForm({ name: '', phone: '', topic: '' });
       setTimeout(() => close(), 1200);

@@ -25,8 +25,8 @@ export const metadata = {
   ],
   alternates: { canonical: "https://www.maacgreaternoida.com/" },
   openGraph: {
-    title: "MAAC Greater Noida - Official Animation & VFX Institute",
-    description: "MAAC Greater Noida - The official and leading animation, VFX & gaming institute in Greater Noida. Located at Office No 601, 6th Floor, OM Tower, Alpha 1 Commercial Belt. Call 08048052804.",
+    title: "MAAC Greater Noida - Best Institute for Animation, VFX, Graphics & Video Editing",
+    description: "MAAC Greater Noida - The best institute for animation, VFX, graphics and video editing in Greater Noida. Located at Office No 601, 6th Floor, OM Tower, Alpha 1 Commercial Belt. Call 08048052804.",
     url: "https://www.maacgreaternoida.com",
     siteName: "MAAC Greater Noida",
     locale: "en_US",
@@ -34,8 +34,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MAAC Greater Noida - Official Animation & VFX Institute",
-    description: "MAAC Greater Noida - The official and leading animation, VFX & gaming institute in Greater Noida. Located at OM Tower, Alpha 1 Commercial Belt.",
+    title: "MAAC Greater Noida - Best Institute for Animation, VFX, Graphics & Video Editing",
+    description: "MAAC Greater Noida - The best institute for animation, VFX, graphics and video editing in Greater Noida. Located at OM Tower, Alpha 1 Commercial Belt.",
   }
 };
 
